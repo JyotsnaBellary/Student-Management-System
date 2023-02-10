@@ -1,0 +1,50 @@
+<section class="align-items-center center bg-light" style="margin-top: 5%;">
+  
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center ">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid" alt="Sample image">
+      </div>
+      
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">         
+ <!-- Sign_in input -->
+ <form class="form-group" ngNativeValidate>
+         
+    <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+    <div class="form-group">
+      <label for="email"><h6>Email:</h6></label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="email" placeholder="Enter email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password"><h6>Password</h6></label>
+      <input type="text" class="form-control" id="password" [(ngModel)]="password" placeholder="Enter password" name="password" required>
+    </div>
+    
+    <br>
+  <!-- implementation of register button later. -->
+  <div class="text-center text-lg-start mt-4 pt-1">
+    <button (click)="checkLogin()" class="btn btn-success"><h5>Login</h5></button>
+  </div>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- <div class="d-flex justify-content-between align-items-center"> -->
+    <!-- Checkbox -->
+    <!-- <div class="form-check mb-0">
+      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+      <label class="form-check-label" for="form2Example3">
+        Remember me
+      </label>
+    </div> -->
+    <!-- <a href="#!" class="text-body">Forgot password?</a>
+  </div> -->
+
+  <!-- <div class="text-center text-lg-start mt-4 pt-2"> -->
+    <!-- <button (click)="checkLogin()" style="background-color: #212529;" class="btn btn-success"><h5>Login</h5></button> -->
+    <!-- <p class="fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+        class="link-danger">Register</a></p>
+  </div> -->

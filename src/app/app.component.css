@@ -1,0 +1,23 @@
+.main{
+    margin-top: 50px;
+    height: min-content;
+    /* background-color: yellowgreen; */
+    padding: 0.5%;
+}
+.app-route{
+    margin-left:200px;
+    margin-right: 1%;
+    /* left: 200px; */
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /* background-color: #111; */
+    overflow-x: hidden;
+    padding-top: 20px;
+  }

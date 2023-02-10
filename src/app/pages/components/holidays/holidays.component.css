@@ -1,0 +1,23 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+
+  }
+  thead tr{
+    background-color: #93BFCF;
+    color: #f2f2f2;
+    
+  }
+  tbody:nth-child(odd) ::ng-deep tr {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+
+  }

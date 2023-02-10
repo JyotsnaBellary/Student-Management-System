@@ -1,0 +1,48 @@
+[
+    {
+        "Class":"1",
+        "schedule":[
+            {"day":"Monday",
+            "date":"27-02-2022",
+            "subject":"Maths"},
+            {"day":"Tuesday",
+            "date":"28-02-2022",
+            "subject":"English"},
+            {"day":"Wednesday",
+            "date":"01-03-2022",
+            "subject":"Social"},
+            {"day": "Thursday",
+            "date":"02-03-2022",
+            "subject":"Language"},
+            {"day":"Friday",
+            "date":"03-03-2022",
+            "subject":"Science"}
+        ]
+    },
+    {
+        "Class":"2",
+        "schedule":[
+            {"day":"Monday",
+            "date":"27-02-2022",
+            "subject":"Science"},
+            {"day":"Tuesday",
+            "date":"28-02-2022",
+            "subject":"Maths"},
+            {"day":"Wednesday",
+            "date":"01-03-2022",
+            "subject":"English"},
+            {"day": "Thursday",
+            "date":"02-03-2022",
+            "subject":"Social"},
+            {"day":"Friday",
+            "date":"03-03-2022",
+            "subject":"Language"}
+        ]
+        
+    }
+]
+
+
+            
+            
+            

@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "Student-Management-System"
+  "defaultProject": "Student-Management-System",
+  "cli": {
+    "analytics": false
+  }
 }

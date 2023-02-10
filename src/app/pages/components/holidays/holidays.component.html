@@ -1,0 +1,18 @@
+<div class="container-fluid center mt-2" >
+    <table class="">
+      <thead class="">
+        <tr>
+          <th>Date</th>
+          <th>Holiday</th>
+          <th>Day</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let holiday of Holidays">
+        <tr>
+          <td>{{ holiday.date }}</td>
+          <td>{{ holiday.holiday }}</td>
+          <td>{{ holiday.day }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

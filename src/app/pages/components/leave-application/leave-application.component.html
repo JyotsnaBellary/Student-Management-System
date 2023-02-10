@@ -1,0 +1,22 @@
+<div class="card">
+    <h5 class="card-header">Apply Leave</h5>
+    <div class="alert alert-success" *ngIf="successMessage">{{successMessage}}</div>
+    <div class="card-body">
+    <form class="form-group" ngNativeValidate>
+        <form [formGroup]="form" (ngsubmit)="submit()">
+            <div class="form-group">
+              <label for="website">More days</label>
+                  <input type="checkbox" [value]="" (change)="onCheckboxChange($event)" />
+          </div>
+          </form>
+        <div class="row mt-2">
+            <div class="col-md-3"><label class="labels">On/From Date</label><input type="date" class="form-control" id="fromDate" [(ngModel)]="fromDate" name="fromDate" required></div>
+            <div class="col-md-3" *ngIf="moreDays"><label class="labels">End Date</label><input type="date" class="form-control" id="toDate" [(ngModel)]="toDate" name="ToDate" required></div>
+        </div>
+        <div class="col-md-6"><label class="labels">Leave Reason</label><input type="text" class="form-control" id="reason" [(ngModel)]="reason" name="reason" required></div>
+        <div class="text-center text-lg-start mt-4 pt-2">
+            <button (click)="save()" style="background-color: #212529;" class="btn btn-success"><h5>Submit</h5></button>
+        </div>
+        </form>
+    </div>
+  </div>

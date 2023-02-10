@@ -1,0 +1,54 @@
+
+[
+    
+    {"Class": "1", 
+      "section": "A",
+      "schedule":
+        {
+            "Monday":["Art", "English", "PE", "Maths", "Science", "Language", "Social"], 
+            "Tuesday":["Social", "English", "GK", "Science", "Maths", "PE", "Language"],
+            "Wednesday":["Maths", "PE", "Music", "Language", "Social", "Science", "English"],
+            "Thursday":["English", "Dance", "Science", "Social", "Language", "PE", "Maths"],
+            "Friday":["Moral Studies", "Science", "Maths", "English", "PE", "Language", "Social"]
+        }
+        
+    },
+    {"Class": "1", 
+      "section": "B",
+      "schedule":
+        {
+            "Monday":["Maths", "Science", "Language", "Social", "Art", "English", "PE"],
+            "Tuesday":["Science", "Maths", "PE", "Language", "Social", "English", "GK"],
+            "Wednesday":["Language", "Social", "Science", "Maths", "PE", "Music", "English"],
+            "Thursday":[ "Social", "English", "Dance", "Science", "Maths", "PE", "Language"],
+            "Friday":["English", "Moral Studies", "Science", "Maths", "PE", "Language", "Social"]
+        }
+        
+    },
+    {"Class": "2", 
+      "section": "A",
+      "schedule":
+        {
+            "Monday":[ "Social", "English", "Dance", "Science", "Maths", "PE", "Language"],
+            "Tuesday":["Language", "Social", "Science", "Maths", "PE", "Music", "English"],
+            "Wednesday":["English", "Moral Studies", "Science", "Maths", "PE", "Language", "Social"],
+            "Thursday": ["Maths", "Science", "Language", "Social", "Art", "English", "PE"],
+            "Friday":["Science", "Maths", "PE", "Language", "Social", "English", "GK"]
+        }
+        
+    },
+    {"Class": "2", 
+      "section": "B",
+      "schedule":
+        {
+            "Monday":["Science", "Maths", "Social","Language" , "PE", "Music", "English"],
+            "Tuesday":[ "Social", "English", "Dance", "Science", "PE", "Maths", "Language"],
+            "Wednesday":["Science", "Maths", "PE", "Language", "Social", "English", "GK"],
+            "Thursday": ["English", "Moral Studies", "Science", "Maths", "PE", "Language", "Social"],
+            "Friday":["Maths", "Science", "Language", "Social", "Art", "English", "PE"]
+        }
+        
+    
+    }
+    
+]
