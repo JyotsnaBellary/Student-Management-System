@@ -1,0 +1,77 @@
+[
+    {
+        "date":"Jan 1, 2023",
+        "day":"Sunday",
+        "holiday":"New Year"
+    },
+    {
+        "date":"Jan 26, 2023",
+        "day":"Thursday",
+        "holiday":"Republic Day"
+    },
+    {
+        "date":"Feb 18, 2023",
+        "day":"Saturday",
+        "holiday":"Maha Shivaratri"
+    },
+    {
+        "date":"Mar 08, 2023",
+        "day":"Wednesday",
+        "holiday":"Holi"
+    },
+    {
+        "date":"Mar 30, 2023",
+        "day":"Thursday",
+        "holiday":"Ram Navami"
+    },
+    {
+        "date":"Apr 07, 2023",
+        "day":"Friday",
+        "holiday":"Good Friday"
+    },
+    {
+        "date":"Apr 21, 2023",
+        "day":"Friday",
+        "holiday":"Id-ul-Fitr (Ramzan ID)"
+    },
+    {
+        "date":"Aug 15, 2023",
+        "day":"Tuesday",
+        "holiday":"Independence Day"
+    },
+    {
+        "date":"Sep 19, 2023",
+        "day":"Tuesday",
+        "holiday":"Ganesh Chaturthi"
+    },
+    {
+        "date":"Oct 02, 2023",
+        "day":"Monday",
+        "holiday":"Mathatma Gandhi Jayanti"
+    },
+    {
+        "date":"Oct 24, 2023",
+        "day":"Tuesday",
+        "holiday":"Dasara"
+    },
+    {
+        "date":"Nov 12, 2023",
+        "day":"Sunday",
+        "holiday":"Diwali(Lakshmi Puja)"
+    },
+    {
+        "date":"Nov 14, 2023",
+        "day":"Tuesday",
+        "holiday":"Diwali-Balipratipada"
+    },
+    {
+        "date":"Nov 27, 2023",
+        "day":"Monday",
+        "holiday":"Guru Nanak Jayanti"
+    },
+    {
+        "date":"Dec 25, 2023",
+        "day":"Monday",
+        "holiday":"Christmas"
+    }
+]

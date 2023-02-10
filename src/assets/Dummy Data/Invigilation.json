@@ -1,0 +1,44 @@
+[
+    {
+        "teacherId":"T002",
+        "Class":"1",
+        "Section":"A",
+        "schedule":
+            {"day":"Monday",
+             "date":"27-02-2022",
+             "subject":"Science"
+            }
+    },
+    {
+        "teacherId":"T002",
+        "Class":"2",
+        "Section":"B",
+        "schedule":
+            {"day":"Tuesday",
+             "date":"28-02-2022",
+             "subject":"Maths"
+            }
+    },
+    {
+        "teacherId":"T002",
+        "Class":"2",
+        "Section":"A",
+        "schedule":
+            {"day":"Wednesday",
+             "date":"01-03-2022",
+             "subject":"English"
+            }
+    },
+    {
+        "teacherId":"T002",
+        "Class":"1",
+        "Section":"B",
+        "schedule":
+            {"day":"Thursday",
+             "date":"02-03-2022",
+             "subject":"Language"
+            }
+    }
+
+    
+]

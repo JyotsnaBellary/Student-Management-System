@@ -1,0 +1,54 @@
+<table class="table-bordered" border="5" cellspacing="0" align="center">
+    <!--<caption>Timetable</caption>-->
+    <thead>
+    <tr>
+        <td *ngIf="examInvigilations" align="center" height="70"
+            width="100">
+            <b>Class</b>
+        </td>
+        <td *ngIf="examInvigilations" align="center" height="70"
+            width="100">
+            <b>Section</b>
+        </td>
+        
+        <td align="center" height="70"
+            width="150">
+            <b>Date</b>
+        </td>
+        <td align="center" height="70"
+            width="150">
+            <b>Day</b>
+        </td>
+        <td align="center" height="70"
+            width="150">
+            <b>Subject</b>
+        </td>
+    </tr>
+    </thead>
+    <tbody *ngFor="let f of examInvigilations">
+        <tr *ngIf="f.teacherId === details?.Id">
+            <td align="center" height="50">
+                <b>{{f.Class}}</b></td>
+            <td align="center" height="50">
+                <b>{{f.Section}}</b></td>
+            <td align="center" height="50">
+                <b>{{f.schedule.date}}</b></td>
+            <td align="center" height="50">
+                <b>{{f.schedule.day}}</b></td>
+            <td align="center" height="50">
+                <b>{{f.schedule.subject}}</b></td>
+        </tr>
+    </tbody>
+
+    <tbody *ngFor="let exam of examschedule">
+        <tr>
+            <td align="center" height="50">
+                <b>{{exam.date}}</b></td>
+            <td align="center" height="50">
+                <b>{{exam.day}}</b></td>
+            <td align="center" height="50">
+                <b>{{exam.subject}}</b></td>
+            
+        </tr>
+    </tbody>
+</table>

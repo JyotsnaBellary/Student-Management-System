@@ -1,0 +1,183 @@
+
+<h2 align="center">Weekly Schedule</h2>
+<table class="table-bordered mt-4" border="5" cellspacing="0" align="center">
+    <!--<caption>Timetable</caption>-->
+    <thead>
+    <tr>
+        <td align="center" height="70"
+            width="130"><br>
+            <b>Day/Period</b>
+        </td>
+        <td align="center" height="70"
+            width="130">
+            <b>I<br>9:30-10:20</b>
+        </td>
+        <td align="center" height="70"
+            width="130">
+            <b>II<br>10:20-11:10</b>
+        </td>
+        <td align="center" height="70"
+            width="130">
+            <b>III<br>11:10-12:00</b>
+        </td>
+        <td align="center" height="70"
+            width="130">
+            <b>12:00-12:40</b>
+        </td>
+        <td align="center" height="70"
+            width="130">
+            <b>IV<br>12:40-1:30</b>
+        </td>
+        <td align="center" height="70"
+            width="130">
+            <b>V<br>1:30-2:20</b>
+        </td>
+        <td align="center" height="70"
+            width="130">
+            <b>VI<br>2:20-3:10</b>
+        </td>
+        <td align="center" height="70"
+            width="130">
+            <b>VII<br>3:10-4:00</b>
+        </td>
+    </tr>
+    </thead>
+    <tbody *ngIf="weekSchedule">
+    <tr>
+        <td align="center" height="60">
+            <b>Monday</b></td>
+        <td align="center" height="50">{{weekSchedule.Monday[0]}}</td>
+        <td align="center" height="50">{{weekSchedule.Monday[1]}}</td>
+        <td align="center" height="50">{{weekSchedule.Monday[2]}}</td>
+        <td rowspan="5" align="center" height="50">
+            <h2>L<br>U<br>N<br>C<br>H</h2>
+        </td>
+        
+        <td align="center" height="50">{{weekSchedule.Monday[3]}}</td>
+        <td align="center" height="50">{{weekSchedule.Monday[4]}}</td>
+        <td align="center" height="50">{{weekSchedule.Monday[5]}}</td>
+        <td align="center" height="50">{{weekSchedule.Monday[6]}}</td>
+    </tr>
+    <tr>
+        <td align="center" height="60">
+            <b>Tuesday</b>
+        </td>
+        <td align="center" height="50">{{weekSchedule.Tuesday[0]}}</td>
+        <td align="center" height="50">{{weekSchedule.Tuesday[1]}}</td>
+        <td align="center" height="50">{{weekSchedule.Tuesday[2]}}</td>
+        <td align="center" height="50">{{weekSchedule.Tuesday[3]}}</td>
+        <td align="center" height="50">{{weekSchedule.Tuesday[4]}}</td>
+        <td align="center" height="50">{{weekSchedule.Tuesday[5]}}</td>
+        <td align="center" height="50">{{weekSchedule.Tuesday[6]}}</td>
+    </tr>
+    <tr>
+        <td align="center" height="60">
+            <b>Wednesday</b>
+        </td>
+        <td align="center" height="50">{{weekSchedule.Wednesday[0]}}</td>
+        <td align="center" height="50">{{weekSchedule.Wednesday[1]}}</td>
+        <td align="center" height="50">{{weekSchedule.Wednesday[2]}}</td>
+        <td align="center" height="50">{{weekSchedule.Wednesday[3]}}</td>
+        <td align="center" height="50">{{weekSchedule.Wednesday[4]}}</td>
+        <td align="center" height="50">{{weekSchedule.Wednesday[5]}}</td>
+        <td align="center" height="50">{{weekSchedule.Wednesday[6]}}</td>
+    </tr>
+    <tr>
+        <td align="center" height="60">
+            <b>Thursday</b>
+        </td>
+        <td align="center" height="50">{{weekSchedule.Thursday[0]}}</td>
+        <td align="center" height="50">{{weekSchedule.Thursday[1]}}</td>
+        <td align="center" height="50">{{weekSchedule.Thursday[2]}}</td>
+        <td align="center" height="50">{{weekSchedule.Thursday[3]}}</td>
+        <td align="center" height="50">{{weekSchedule.Thursday[4]}}</td>
+        <td align="center" height="50">{{weekSchedule.Thursday[5]}}</td>
+        <td align="center" height="50">{{weekSchedule.Thursday[6]}}</td>
+    </tr>
+    <tr>
+        <td align="center" height="60">
+            <b>Friday</b>
+        </td>
+        <td align="center" height="50">{{weekSchedule.Friday[0]}}</td>
+        <td align="center" height="50">{{weekSchedule.Friday[1]}}</td>
+        <td align="center" height="50">{{weekSchedule.Friday[2]}}</td>
+        <td align="center" height="50">{{weekSchedule.Friday[3]}}</td>
+        <td align="center" height="50">{{weekSchedule.Friday[4]}}</td>
+        <td align="center" height="50">{{weekSchedule.Friday[5]}}</td>
+        <td align="center" height="50">{{weekSchedule.Friday[6]}}</td>
+    </tr>
+    
+</tbody>
+
+<tbody *ngIf="teachClass">
+    <tr>
+        <td align="center" height="60">
+            <b>Monday</b></td>
+        <td align="center" height="50">{{teachClass.Monday[0].Class}} {{teachClass.Monday[0].section}}</td>
+        <td align="center" height="50">{{teachClass.Monday[1].Class}} {{teachClass.Monday[1].section}}</td>
+        <td align="center" height="50">{{teachClass.Monday[2].Class}} {{teachClass.Monday[2].section}}</td>
+        
+        <td rowspan="5" align="center" height="50">
+            <h2>L<br>U<br>N<br>C<br>H</h2>
+        </td>
+        
+        <td align="center" height="60">{{teachClass.Monday[3].Class}} {{teachClass.Monday[3].section}}</td>
+        <td align="center" height="50">{{teachClass.Monday[4].Class}} {{teachClass.Monday[4].section}}</td>
+        <td align="center" height="50">{{teachClass.Monday[5].Class}} {{teachClass.Monday[5].section}}</td>
+        <td align="center" height="50">{{teachClass.Monday[6].Class}} {{teachClass.Monday[6].section}}</td>
+
+    </tr>
+    <tr>
+        <td align="center" height="60">
+            <b>Tuesday</b>
+        </td>
+        <td align="center" height="50">{{teachClass.Tuesday[0].Class}} {{teachClass.Tuesday[0].section}}</td>
+        <td align="center" height="50">{{teachClass.Tuesday[1].Class}} {{teachClass.Tuesday[1].section}}</td>
+        <td align="center" height="50">{{teachClass.Tuesday[2].Class}} {{teachClass.Tuesday[2].section}}</td>
+        <td align="center" height="50">{{teachClass.Tuesday[3].Class}} {{teachClass.Tuesday[3].section}}</td>
+        <td align="center" height="50">{{teachClass.Tuesday[4].Class}} {{teachClass.Tuesday[4].section}}</td>
+        <td align="center" height="50">{{teachClass.Tuesday[5].Class}} {{teachClass.Tuesday[5].section}}</td>
+        <td align="center" height="50">{{teachClass.Tuesday[6].Class}} {{teachClass.Tuesday[6].section}}</td>
+        
+    </tr>
+    <tr>
+        <td align="center" height="60">
+            <b>Wednesday</b>
+        </td>
+        <td align="center" height="50">{{teachClass.Wednesday[0].Class}} {{teachClass.Wednesday[0].section}}</td>
+        <td align="center" height="50">{{teachClass.Wednesday[1].Class}} {{teachClass.Wednesday[1].section}}</td>
+        <td align="center" height="50">{{teachClass.Wednesday[2].Class}} {{teachClass.Wednesday[2].section}}</td>
+        <td align="center" height="50">{{teachClass.Wednesday[3].Class}} {{teachClass.Wednesday[3].section}}</td>
+        <td align="center" height="50">{{teachClass.Wednesday[4].Class}} {{teachClass.Wednesday[4].section}}</td>
+        <td align="center" height="50">{{teachClass.Wednesday[5].Class}} {{teachClass.Wednesday[5].section}}</td>
+        <td align="center" height="50">{{teachClass.Wednesday[6].Class}} {{teachClass.Wednesday[6].section}}</td>
+
+    </tr>
+    <tr>
+        <td align="center" height="60">
+            <b>Thursday</b>
+        </td>
+        <td align="center" height="50">{{teachClass.Thursday[0].Class}} {{teachClass.Thursday[0].section}}</td>
+        <td align="center" height="50">{{teachClass.Thursday[1].Class}} {{teachClass.Thursday[1].section}}</td>
+        <td align="center" height="50">{{teachClass.Thursday[2].Class}} {{teachClass.Thursday[2].section}}</td>
+        <td align="center" height="50">{{teachClass.Thursday[3].Class}} {{teachClass.Thursday[3].section}}</td>
+        <td align="center" height="50">{{teachClass.Thursday[4].Class}} {{teachClass.Thursday[4].section}}</td>
+        <td align="center" height="50">{{teachClass.Thursday[5].Class}} {{teachClass.Thursday[5].section}}</td>
+        <td align="center" height="50">{{teachClass.Thursday[6].Class}} {{teachClass.Thursday[6].section}}</td>
+        
+    </tr>
+    <tr>
+        <td align="center" height="60">
+            <b>Friday</b>
+        </td>
+        <td align="center" height="50">{{teachClass.Friday[0].Class}} {{teachClass.Friday[0].section}}</td>
+        <td align="center" height="50">{{teachClass.Friday[1].Class}} {{teachClass.Friday[1].section}}</td>
+        <td align="center" height="50">{{teachClass.Friday[2].Class}} {{teachClass.Friday[2].section}}</td>
+        <td align="center" height="50">{{teachClass.Friday[3].Class}} {{teachClass.Friday[3].section}}</td>
+        <td align="center" height="50">{{teachClass.Friday[4].Class}} {{teachClass.Friday[4].section}}</td>
+        <td align="center" height="50">{{teachClass.Friday[5].Class}} {{teachClass.Friday[5].section}}</td>
+        <td align="center" height="50">{{teachClass.Friday[6].Class}} {{teachClass.Friday[6].section}}</td>
+    </tr>
+</tbody>
+</table>
+
