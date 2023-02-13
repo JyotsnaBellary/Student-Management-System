@@ -14,7 +14,7 @@
         <tbody *ngFor="let leave of storedLeaves">
           <tr *ngIf="leave.studentId == userIn.id && issuer == 'student'">
             <td>{{ leave.status }}</td>
-            <td>{{ leave.fromDate }}</td>
+            <td>{{ leave.fromDate | date: 'dd/MM/yyyy'}}</td>
             <td>{{ leave.reason }}</td>
           </tr>
           <tr *ngIf="issuer == 'teacher'">

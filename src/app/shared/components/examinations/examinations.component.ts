@@ -30,7 +30,7 @@ export class ExaminationsComponent implements OnInit {
       }
     }
     else if(this.isUser === "teacher"){
-      alert("inside teacher")
+      // alert("inside teacher")
       this.examInvigilations = JSON.parse(localStorage.getItem("ExamInvigilation")!);
       this.details = JSON.parse(localStorage.getItem("teacherDetails")!);
     

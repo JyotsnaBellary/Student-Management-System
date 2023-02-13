@@ -12,7 +12,8 @@ import Teacherschedule from 'src/assets/Dummy Data/teacher-time-table.json'
 import { Iexamination, Iinvigilation } from 'src/app/shared/entities/examination.entity';
 import { IHoliday } from 'src/app/shared/entities/holiday.entity';
 import  InvigilationList  from 'src/assets/Dummy Data/Invigilation.json'
-
+import storedParents from "src/assets/Dummy Data/Parent.json"
+import { Parents } from 'src/app/shared/entities/Parent.entity';
   @Injectable({
     providedIn: 'root'
   })
@@ -27,7 +28,7 @@ import  InvigilationList  from 'src/assets/Dummy Data/Invigilation.json'
     Holidays: IHoliday[] = [];
     TeacherTimeTableList: ITeacherTimeTable[] = [];
     ExamInvigilationList: Iinvigilation[] = []
-
+    storedParents: Parents[] = []
     //checks if a user has logged in
     checkUser(){
       if(localStorage.getItem("user") == "student" || localStorage.getItem("user") == "teacher" || localStorage.getItem("user") == "admin"){
@@ -41,7 +42,6 @@ import  InvigilationList  from 'src/assets/Dummy Data/Invigilation.json'
    //login function for any user
     login(loginInfo:ILogin):boolean
     {
-      alert("inside login srvice " + loginInfo.email)
       //accessing user list from local storage
       this.storedUsers = JSON.parse(localStorage['UserList']);
       for(let i=0; i<this.storedUsers.length; i++)
@@ -62,7 +62,7 @@ import  InvigilationList  from 'src/assets/Dummy Data/Invigilation.json'
 
             //if the user accessing is a teacher, load invigilations, Weekly Schedules, userDetails
             if(this.storedUsers[i].role === 'teacher'){
-              alert("Teacher");
+              // alert("Teacher");
             // localStorage.setItem("teacher", JSON.stringify(this.storedUsers[i]));
             localStorage.setItem("user", "teacher");
             
@@ -90,15 +90,22 @@ import  InvigilationList  from 'src/assets/Dummy Data/Invigilation.json'
               localStorage.setItem("TimeTableList", JSON.stringify(this.TimeTableList));
               this.StudentExamList = studentExams;
               localStorage.setItem("StudentExams", JSON.stringify(this.StudentExamList));
-              
-              
+              this.storedParents = storedParents;
               for(var s of this.storedEntitiess)
               {
                 if (s.Id === this.storedUsers[i].id)
                 {
                 localStorage.setItem("studentDetails", JSON.stringify(s))
+                for(var p of this.storedParents){
+                  if(s.studentDetails?.parentId == p.parentId){
+                    localStorage.setItem("parentDetails", JSON.stringify(p))
+                    console.log(localStorage.getItem("parentDetails"));
+                    break;
+                  }
+                }
                 // console.log(localStorage.getItem("studentDetails"));
                 }
+                
               }
 
             //AdminLogin, implemented later
@@ -124,16 +131,18 @@ import  InvigilationList  from 'src/assets/Dummy Data/Invigilation.json'
 
 
     logout(){
-        alert("inside logout")
+        // alert("inside logout")
         //checking to see if a student, admin or teacher has logged in
         this.isUser = localStorage.getItem("user")
-        localStorage.removeItem("TimeTableList");
         if(this.isUser === "student"){
           localStorage.removeItem("studentDetails");
-          // alert(this.timeTable[0].schedule.Friday);
-          
+          localStorage.removeItem("StudentExams");
+          localStorage.removeItem("TimeTableList");
         }else if(this.isUser === "teacher"){
           localStorage.removeItem("teacherDetails");
+          localStorage.removeItem("TeacherSchedule");
+          localStorage.removeItem("ExamInvigilation");
+          
         }
       else if(this.isUser === "admin"){
         localStorage.removeItem("adminDetails");

@@ -24,7 +24,7 @@ export class LeaveApplicationComponent implements OnInit {
   successMessage!: string;
   ngOnInit(): void {
     if(this.oneDay==true){
-      alert(this.oneDay)
+      // alert(this.oneDay)
     }
   }
   submit(){}
