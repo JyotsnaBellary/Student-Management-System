@@ -36,16 +36,16 @@
         <div class="col-md-6" *ngIf="details?.studentDetails">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center experience"><span>Parent Details</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Edit</span></div><br>
-                <div class="col-md-12"><label class="labels">Parent Id</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
+                <div class="col-md-12"><label class="labels">Parent Id</label><input type="text" class="form-control" placeholder="experience" value="{{parentDetails.parentId}}" disabled></div> <br>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Mother's Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                    <div class="col-md-6"><label class="labels">Phone Number</label><input type="text" class="form-control" value="" placeholder="surname"></div>
-                    <div class="col-md-12 mt-1"><label class="labels">Email Id</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
+                    <div class="col-md-6"><label class="labels">Mother's Name</label><input type="text" class="form-control" placeholder="first name" value="{{parentDetails.mother.name}}" disabled></div>
+                    <div class="col-md-6"><label class="labels">Phone Number</label><input type="text" class="form-control" value="{{parentDetails.mother.phoneNumber}}" placeholder="surname" disabled></div>
+                    <div class="col-md-12 mt-1"><label class="labels">Email Id</label><input type="text" class="form-control" placeholder="enter address line 1" value="{{parentDetails.mother.emailId}}" disabled></div>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Father's Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                    <div class="col-md-6"><label class="labels">Phone Number</label><input type="text" class="form-control" value="" placeholder="surname"></div>
-                    <div class="col-md-12 mt-1"><label class="labels">Email Id</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
+                    <div class="col-md-6"><label class="labels">Father's Name</label><input type="text" class="form-control" placeholder="first name" value="{{parentDetails.father.name}}" disabled></div>
+                    <div class="col-md-6"><label class="labels">Phone Number</label><input type="text" class="form-control" value="{{parentDetails.father.phoneNumber}}" placeholder="surname" disabled></div>
+                    <div class="col-md-12 mt-1"><label class="labels">Email Id</label><input type="text" class="form-control" placeholder="enter address line 1" value="{{parentDetails.father.emailId}}" disabled></div>
                     
                 </div>
             </div>

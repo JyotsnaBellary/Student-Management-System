@@ -1,0 +1,44 @@
+[
+    {
+        "parentId":"1A001001",
+        "father":{
+            "name":"Ben Ritz",
+            "phoneNumber":"9098776567",
+            "emailId":"ben@gmail.com"
+        },
+        "mother":{
+            "name":"Bella Ritz",
+            "phoneNumber":"9876544567",
+            "emailId":"bella@gmail.com"
+        }
+
+    },
+    {
+        "parentId":"2B003003",
+        "father":{
+            "name":"Carl GG",
+            "phoneNumber": "9334565434",
+            "emailId":"carl@gmail.com"
+        },
+        "mother":{
+            "name":"Pam Ritz",
+            "phoneNumber":"9876544321",
+            "emailId":"pam@gmail.com"
+        }
+
+    },
+    {
+        "parentId":"1B005005",
+        "father":{
+            "name":"Harry Doe",
+            "phoneNumber":"9887656789",
+            "emailId":"harry@gmail.com"
+        },
+        "mother":{
+            "name":"Jane Doe",
+            "phoneNumber":"9087654345",
+            "emailId":"jane@gmail.com"
+        }
+
+    }
+]
