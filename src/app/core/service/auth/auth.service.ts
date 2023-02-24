@@ -78,7 +78,6 @@ import { LibraryService } from '../library/library.service';
         {
           if(this.storedUsers[i].password === loginInfo.password)
           {
-            console.log(this.storedUsers[i].email)
             localStorage.setItem("userEmail", this.storedUsers[i].email);
             this.storedEntitiess = entities;
             this.Holidays = holidays;
@@ -98,7 +97,6 @@ import { LibraryService } from '../library/library.service';
               this.ExamInvigilationList = InvigilationList;
               localStorage.setItem("ExamInvigilation", JSON.stringify(this.ExamInvigilationList));
               
-              console.log(this.storedEntitiess)
               for(var s of this.storedEntitiess){
                 if (s.Id === this.storedUsers[i].id){
                 localStorage.setItem("teacherDetails", JSON.stringify(s))
@@ -141,11 +139,9 @@ import { LibraryService } from '../library/library.service';
                 for(var p of this.storedParents){
                   if(s.studentDetails?.parentId == p.parentId){
                     localStorage.setItem("parentDetails", JSON.stringify(p))
-                    console.log(localStorage.getItem("parentDetails"));
                     break;
                   }
                 }
-                // console.log(localStorage.getItem("studentDetails"));
                 }
                 
               }
@@ -155,7 +151,6 @@ import { LibraryService } from '../library/library.service';
               localStorage.setItem("adminDetails", JSON.stringify(this.storedUsers[i]));
             localStorage.setItem("user", "admin");
             }
-            // alert(localStorage.getItem("student"));
             return true;
           }
         }
@@ -164,7 +159,6 @@ import { LibraryService } from '../library/library.service';
     }
 
     saveAdmin(AdminClass: Object): any {
-      // return this.http.post(`${this.baseUrl}`, AdminClass);
     }
 
 
@@ -173,8 +167,6 @@ import { LibraryService } from '../library/library.service';
 
 
     logout(){
-        // alert("inside logout")
-        //checking to see if a student, admin or teacher has logged in
         this.isUser = localStorage.getItem("user")
         if(this.isUser === "student"){
           localStorage.removeItem("studentDetails");

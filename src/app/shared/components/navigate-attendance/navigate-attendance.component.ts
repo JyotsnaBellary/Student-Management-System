@@ -32,7 +32,6 @@ export class NavigateAttendanceComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['attendance'].currentValue) {
       this.weeklyAttendence = this.attendance;
-      console.log(this.weeklyAttendence[0])
       this.currentWeekDate = moment(this.weeklyAttendence[0].attendance[0].date);
     }
   }

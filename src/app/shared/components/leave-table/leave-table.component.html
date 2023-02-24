@@ -15,11 +15,6 @@
           </tr>
         </thead>
         <tbody *ngFor="let leave of storedLeaves">
-          <tr *ngIf="leave.studentId == userIn.studentId && issuer == 'student'">
-            <td>{{ leave.status }}</td>
-            <td>{{ leave.fromDate | date: 'dd/MM/yyyy'}}</td>
-            <td>{{ leave.reason }}</td>
-          </tr>
           <tr *ngIf="issuer == 'teacher'">
             <td>{{leave.studentId}}</td>
             <td>{{leave.studentName}}</td>
@@ -27,6 +22,12 @@
             <td>{{ leave.fromDate }}</td>
             <td>{{ leave.reason }}</td>
           </tr>
+          <tr *ngIf="issuer == 'student' && leave.studentId == userIn.studentId">
+            <td>{{ leave.status }}</td>
+            <td>{{ leave.fromDate | date: 'dd/MM/yyyy'}}</td>
+            <td>{{ leave.reason }}</td>
+          </tr>
+
         </tbody>
       </table>
     <!-- <app-leave-application></app-leave-application> -->

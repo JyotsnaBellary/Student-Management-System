@@ -16,7 +16,6 @@ export class LibraryService {
 
   private borrowBooksSubject = new Subject<IBorrowedBooks>();
   private preBooksSubject = new Subject<Iprebook>()
-  // private booksThatAreBorrowedSubject = new Subject<IBorrowedBooks>();
   private removedBooksSubject = new Subject<string>();
   get borrowBookObservable(){
     return this.borrowBooksSubject.asObservable();
@@ -24,9 +23,7 @@ export class LibraryService {
   get removedBooksObservable(){
     return this.removedBooksSubject.asObservable();
   }
-  // get booksThatAreBorrowedObservable(){
-    // return this.booksThatAreBorrowedSubject.asObservable();
-  // }
+  
   get preBooksObservable(){
     return this.preBooksSubject.asObservable();
   }
@@ -34,10 +31,6 @@ export class LibraryService {
 
  
   getLibraryData(){
-    // let libraryBooks:Book[] = JSON.parse(localStorage.getItem("library")!);
-    // libraryBooks.forEach((book:Book) => {
-    //   this.LibraryBooksSubject.next(book)
-    // });
     return JSON.parse(localStorage.getItem("library")!);
     
   }
@@ -54,7 +47,6 @@ export class LibraryService {
   }
 
   getBorrowedBooks(entityId:string):CompleteBookBorrowedDetails [] | undefined{
-    console.log(entityId)
     if(!localStorage.getItem("BorrowedBooks")){
     let BorrowedBookList: CompleteBookBorrowedDetails [] = []
     for(var each of borrowedList){
@@ -86,7 +78,6 @@ export class LibraryService {
 
   returnBook(entityId:string, bookId:string){
       let BorrowedBookList: CompleteBookBorrowedDetails [] = JSON.parse(localStorage.getItem("BorrowedBooks")!)
-      console.log(bookId)
     for(var each of BorrowedBookList){
       if(each.bookId === bookId){
         let beforeBorrowedBookList: CompleteBookBorrowedDetails [] = BorrowedBookList.splice(0,BorrowedBookList.indexOf(each))

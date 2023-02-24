@@ -21,6 +21,6 @@ export class LeaveTableComponent implements OnInit {
     this.issuer = localStorage.getItem("user")
     this.storedLeaves = JSON.parse(localStorage.getItem("LeaveList")!);
     this.student = JSON.parse(localStorage.getItem("studentDetails")!);
-    console.log(this.storedLeaves)
+    console.log(this.storedLeaves[0].studentId)
   }
 }

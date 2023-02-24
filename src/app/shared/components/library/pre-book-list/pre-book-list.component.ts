@@ -21,7 +21,6 @@ export class PreBookListComponent implements OnInit, OnDestroy {
       this.borrowCart.push(borrowCartItem);
       
     }))
-    console.log(this.borrowCart)
   }
   ngOnDestroy(): void {
     this.subscriptions.forEach((subscription:Subscription)=>{
