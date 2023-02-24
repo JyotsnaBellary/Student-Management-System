@@ -9,10 +9,9 @@ import holidays from 'src/assets/Dummy Data/Holidays.json'
 export class HolidaysComponent implements OnInit {
 
   constructor() { }
-  Holidays: IHoliday[] = [];
+  holidays: IHoliday[] = [];
   ngOnInit(): void {
-    // alert(storedNames[0]['Name']);
-    this.Holidays = holidays;
+    this.holidays = holidays;
   }
 
 }

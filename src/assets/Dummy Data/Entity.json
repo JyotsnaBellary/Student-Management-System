@@ -9,6 +9,15 @@
         "HomeAddress": {"currentAddress":"#201, 3rd cross, BTM Layout","permanentAddress": "#201, 3rd cross, BTM Layout"}
     },
     {
+        "Id":"1A002",
+        "firstName":"Bella",
+        "lastName":"Swan",
+        "studentDetails":{"class":"1",
+        "section":"A",
+        "parentId":"1A002002"},
+        "HomeAddress": {"currentAddress":"#202, 2nd cross, HSR Layout","permanentAddress": "#202, 2nd cross, HSR Layout"}
+    },
+    {
         "Id":"2B003",
         "firstName":"Ben",
         "lastName":"GG",
@@ -30,7 +39,7 @@
         "Id":"T002",
         "firstName":"John",
         "lastName":"Doe",
-        "teacherDetails":{"dept": "primary", "specialization":"Maths"},
+        "teacherDetails":{"dept": "primary", "specialization":"Maths", "class":"1", "section":"A"},
         "HomeAddress":  {"currentAddress": "#867, 22nd cross, Kempapura",  "permanentAddress": "#867, 22nd cross, Kempapura"}
     }
 ]

@@ -10,7 +10,7 @@ export class TopnavComponent implements OnInit {
   constructor(public loginService:AuthService){}
   emailId!: string;
   ngOnInit(): void {
-  this.emailId = localStorage.getItem("userEmail")!;
+  this.emailId = this.loginService.getEmailId();
 
   }
   logout(){

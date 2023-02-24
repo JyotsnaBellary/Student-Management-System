@@ -7,6 +7,13 @@
         "role": "student"
     },
     {
+        "id":"1A002",
+        "name":"Bella",
+        "email":"bella@gmail.com",
+        "password":"1234",
+        "role": "student"
+    },
+    {
         "id":"2B003",
         "name":"Ben",
         "email":"Ben@gmail.com",

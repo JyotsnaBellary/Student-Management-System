@@ -1,0 +1,27 @@
+<div class="card">
+    <h5 class="card-header">Pre-Booked List of Books</h5>
+    <div class="card-body">
+<div *ngIf="borrowCart.length > 0" class="side center mt-2">
+    <table class="">
+      <thead>
+        <tr>
+          <th>Sl no.</th>
+          <th>Book Name</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let cartItem of borrowCart">
+        <tr>
+          <td>{{cartItem.bookId}}</td>
+          <td>{{cartItem.bookName}}</td>
+          <td><button (click)="removeBookFromPreBookList(cartItem.bookId)"><span class="material-symbols-outlined">
+            delete
+            </span></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr style="margin: 0px 4px;">
+    <br>
+    </div>
+    </div></div>

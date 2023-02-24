@@ -1,3 +1,6 @@
+<div class="card">
+  <h5 class="card-header">Student Leave Details</h5>
+  <div class="card-body">
 <div *ngIf="storedLeaves" class="leave-table">
   
     <table class="">
@@ -12,7 +15,7 @@
           </tr>
         </thead>
         <tbody *ngFor="let leave of storedLeaves">
-          <tr *ngIf="leave.studentId == userIn.id && issuer == 'student'">
+          <tr *ngIf="leave.studentId == userIn.studentId && issuer == 'student'">
             <td>{{ leave.status }}</td>
             <td>{{ leave.fromDate | date: 'dd/MM/yyyy'}}</td>
             <td>{{ leave.reason }}</td>
@@ -28,3 +31,5 @@
       </table>
     <!-- <app-leave-application></app-leave-application> -->
   </div>
+</div>
+</div>

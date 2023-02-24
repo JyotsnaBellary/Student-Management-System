@@ -1,0 +1,6 @@
+<div>
+<ul>    
+    <li *ngIf="details?.teacherDetails"><button (click)="onClassClick()" routerLinkActive="active">{{details?.teacherDetails?.class}}{{details?.teacherDetails?.section}}</button></li>
+    <li *ngIf="details?.studentDetails"><button  routerLinkActive="active" disabled>{{details?.studentDetails?.class}}{{details?.studentDetails?.section}}</button></li>
+</ul>
+</div>

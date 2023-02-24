@@ -1,0 +1,98 @@
+[
+    {
+        "bookId":"B123",
+        "bookName":"Insurgent",
+        "imagePath":"../../assets/Images/insurgent.jpg",
+        "bookDetails": 
+        {
+            "author":"Veronica Roth",
+            "gist":"One choice can transform you--or it can destroy you. But every choice has consequences, and as unrest surges in the factions all around her, Tris Prior must continue trying to save those she loves--and herself--while grappling with haunting questions of grief and forgiveness, identity and loyalty, politics and love. "
+        },
+        "status":"borrowed",
+        "quantity":1
+    },
+    {
+        "bookId":"B234",
+        "bookName":"Little Women",
+        "imagePath":"../../assets/Images/LittleWomen.jpg",
+        "bookDetails": 
+        {
+            "author": "Louisa May Alcott",
+            "gist":"Chronicles the joys and sorrows of the four March sisters as they grow into young ladies in nineteenth-century New England. "
+        },
+        "status":"Available",
+        "quantity":1
+    },
+    {
+        "bookId":"B345",
+        "bookName":"The Shining",
+        "imagePath":"../../assets/Images/theshining.jpg",
+        "bookDetails": 
+        {
+            "author":"Stephen King",
+            "gist":"The Overlook Hotel is more than just a home-away-from-home for the Torrance family. For Jack, Wendy, and their young son, Danny,it is a place where past horrors come to life. And where those gifted with the shining do battle with the darkest evils."
+        },
+        "status":"borrowed",
+        "quantity":1
+    },
+    {
+        "bookId":"B456",
+        "bookName":"The hat",
+        "imagePath":"../../assets/Images//theHat.jpg",
+        "bookDetails": 
+        {
+            "author":" Jan Brett",
+            "gist":"When Lisa hangs her woolen clothes in the sun to air them out for winter, the hedgehog, to the amusement of the other animals, ends up wearing a stocking on his head. "
+        },
+        "status":"borrowed",
+        "quantity":1
+    },
+    {
+        "bookId":"B567",
+        "bookName":"Think Like a Monk",
+        "imagePath":"../../assets/Images/thinkLikeAMonk.jpg",
+        "bookDetails": 
+        {
+            "author":"Jay Shetty",
+            "gist":"Shetty draws on his time as a monk to show us how we can clear the roadblocks to our potential and power. Combining ancient wisdom and his own rich experiences in the ashram, Think Like a Monk reveals how to overcome negative thoughts and habits, and access the calm and purpose that lie within all of us. He transforms abstract lessons into advice and exercises we can all apply to reduce stress, improve relationships, and give the gifts we find in ourselves to the world. Shetty proves that everyone can—and should—think like a monk."
+        },
+        "status":"borrowed",
+        "quantity":1
+    },
+    {
+        "bookId":"B678",
+        "bookName":"Cell",
+        "imagePath":"../../assets/Images/cell.jpg",
+        "bookDetails": 
+        {
+            "author":"Stephen King",
+            "gist":"On October 1, God is in His heaven, the stock market stands at 10,140, most of the planes are on time, and Clayton Riddell, an artist from Maine, is almost bouncing up Boylston Street in Boston. He's just landed a comic book deal that might finally enable him to support his family by making art instead of teaching it. He's already picked up a small (but expensive!) gift for his long-suffering wife, and he knows just what he'll get for his boy Johnny. Why not a little treat for himself? "
+        },
+        "status":"borrowed",
+        "quantity":1
+    },
+    {
+        "bookId":"B789",
+        "bookName":"The Book Theif",
+        "imagePath":"../../assets/Images/bookThief.jpg",
+        "bookDetails": 
+        {
+            "author":"Markus Zusak",
+            "gist":"The Book Thief tells the story of Liesel, a little girl who is taken to a new home because her mother can't afford to take care of her. The story is told by Death, who becomes a character you come to respect and even feel sorry for by the end. The narration puts an odd perspective on the story"
+        },
+        "status":"Available",
+        "quantity":1
+    },
+    {
+        "bookId":"B8910",
+        "bookName":"Wonder",
+        "imagePath":"../../assets/Images/wonder.jpg",
+        "bookDetails": 
+        {
+            "author":"R. J. Palacio",
+            "gist":"Natalie Merchant's song of the same name made her realize that the incident could illustrate a valuable lesson. Palacio was inspired by Merchant's lyrics and she began writing. She named the book directly after the song and used the song's chorus as the prologue of the first chapter. "
+        },
+        "status":"Available",
+        "quantity":1
+    }
+]
