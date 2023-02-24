@@ -51,7 +51,6 @@ export class AttendanceContentComponent implements OnInit, OnChanges {
   }
   onCheckboxChange(e: Event, id:string ,date:Date){
     if((<HTMLInputElement>e.target).checked){
-      console.log(date, id);
     }else{
     }
   }

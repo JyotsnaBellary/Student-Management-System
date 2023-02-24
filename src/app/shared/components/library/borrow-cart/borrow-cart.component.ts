@@ -23,7 +23,6 @@ export class BorrowCartComponent implements OnInit, OnDestroy {
       this.borrowCart.push(borrowCartItem);
       if(this.borrowCart.length > 0){
         this.disableBorrow = false
-        console.log(this.borrowCart.length)
       }else{this.disableBorrow = true}
   
     }))
@@ -47,7 +46,6 @@ export class BorrowCartComponent implements OnInit, OnDestroy {
   borrowBooks(borrowCart:IBorrowCart[]){
     let message = this.libraryService.borrowTheseBooks(borrowCart);
     alert(message)
-    console.log(localStorage.getItem("BorrowedBooks"))
     this.borrowCart = [];
     this.router.navigate(['library/myProfile']); 
 

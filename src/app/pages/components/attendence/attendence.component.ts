@@ -16,7 +16,6 @@ export class AttendenceComponent implements OnInit, OnChanges {
 
   constructor(private authService: AuthService, private attendanceService: AttendanceService) { }
   
-  // @Input() details: IEntity | undefined;
   isUser!: string | null;
   details: IEntity | undefined;
   displayAttendence: boolean = false;
@@ -40,11 +39,9 @@ export class AttendenceComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // this.getWeeklyAttendance()
   }
   getWeeklyAttendance(attendance:Studentattendance[]){
     this.attendance = attendance;
-    // console.log(this.attendance)
   }
   displayClass(Class:string){
     this.displayAttendence = true
@@ -53,8 +50,6 @@ export class AttendenceComponent implements OnInit, OnChanges {
  
   
   getStartDateEmit(startDate:Moment){
-    console.log("inside attendence component, date changed:  ", startDate.calendar())
-    // console.log("heyy")
     this.startDate = startDate;
 
   }

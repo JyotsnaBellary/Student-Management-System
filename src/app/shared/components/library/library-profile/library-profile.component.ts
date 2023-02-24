@@ -25,12 +25,9 @@ export class LibraryProfileComponent implements OnInit {
     this.DisplayBorrowedBooks()
   }
 
-  // public  getOriginalDate (date: Date) {
-  //   return date ? new Date(date.format()) : ''
-  // }
+  
   DisplayBorrowedBooks(){
     this.borrowedBooks = this.libraryService.getBorrowedBooks(this.details?.Id)!
-    console.log(this.borrowedBooks)
   }
   initiateReturn(bookID:string){
    

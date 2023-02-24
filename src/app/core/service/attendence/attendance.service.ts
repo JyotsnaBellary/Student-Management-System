@@ -19,14 +19,10 @@ export class AttendanceService {
   getStudentattendance(Class:string, section:string, studentId:string){
   var studentAttendance: attendanceStatus[] = [];
 
-    console.log(this.attendanceList)
     for(var classList of this.attendanceList){
       if(classList.Class === Class && classList.section === section){
-        console.log(classList.Class+ classList.section)
         for(var each of classList.students){
           if(each.studentId === studentId){
-            console.log(studentId);
-            // console.log(each.attendance)
             for(var statuses of each.attendance){
               studentAttendance.push(new attendanceStatus(statuses.date, statuses.status));
             }
@@ -35,7 +31,6 @@ export class AttendanceService {
         } break;
       }
   } 
-  // console.log(studentAttendance)
   return studentAttendance;
 }
 
@@ -79,7 +74,6 @@ export class AttendanceService {
 
   getNextWeekStart(currentWeekStart:Moment) {
     let nextWeekstart =  moment(currentWeekStart.add(7, 'days'));
-    // console.log(lastWeekstart);
     return nextWeekstart;
   }
 
@@ -91,7 +85,6 @@ export class AttendanceService {
 
 getLastWeekStart(currentWeekStart:Moment) {
   let lastWeekstart =  moment(currentWeekStart.subtract(7, 'days'));
-  // console.log(lastWeekstart);
   return lastWeekstart;
 
 }
@@ -105,7 +98,6 @@ getLastWeekEnd(currentWeekEnd: Moment) {
     var now = moment();
     var studentAttendanceThisWeek: Studentattendance[] = [];
     var thisWeek:attendanceStatus[] = [];
-    console.log("End " , weekEnd)
   for(var status of student.attendanceList){
     if(moment(status.date).isBetween(weekStart, weekEnd) || moment(status.date) === weekStart || moment(status.date) === weekEnd){
       thisWeek.push(status);
