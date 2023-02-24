@@ -1,0 +1,21 @@
+[
+    {
+        "entityId":"1A001",
+        "BookList":[
+        {
+            "bookId":"B345",
+            "initialDate":"2023-02-22T00:00:00.000Z",
+            "returnDate":"2023-03-10T00:00:00.000Z"
+        }]
+    },
+    {
+        "entityId":"T002",
+        "BookList":[
+        {
+            "bookId":"B678",
+            "initialDate":"2023-02-22T00:00:00.000Z",
+            "returnDate":"2023-03-10T00:00:00.000Z"
+        }]
+    }
+    
+]

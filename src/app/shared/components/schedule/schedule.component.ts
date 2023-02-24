@@ -22,7 +22,6 @@ export class ScheduleComponent implements OnInit {
     if(this.isUser === "student"){
       this.stimeTable = JSON.parse(localStorage.getItem("TimeTableList")!);
       this.details = JSON.parse(localStorage.getItem("studentDetails")!);
-      // alert(this.timeTable[0].schedule.Friday);
       for(var t of this.stimeTable){
         if(t.Class === this.details?.studentDetails?.class){
           if(t.section === this.details.studentDetails.section){
@@ -40,7 +39,6 @@ export class ScheduleComponent implements OnInit {
         }
 
       }
-    // alert(this.teacherSchedule[0].schedule.Monday[4].Class)
     }
     
   }

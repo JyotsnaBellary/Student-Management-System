@@ -61,7 +61,9 @@ export interface StudentDetails {
 }
 export interface ITeacherDetails {
     dept: string;
-    specialization: string
+    specialization: string;
+    class: string;
+    section: string;
 }
 export interface IAdminDetails {
     dept: string;

@@ -14,12 +14,21 @@ import { IHoliday } from 'src/app/shared/entities/holiday.entity';
 import  InvigilationList  from 'src/assets/Dummy Data/Invigilation.json'
 import storedParents from "src/assets/Dummy Data/Parent.json"
 import { Parents } from 'src/app/shared/entities/Parent.entity';
+import { Teacher } from 'src/app/shared/entities/Teacher.entity';
+import { Attendance, attendanceStatus, Studentattendance } from 'src/app/shared/entities/Attendence.entity';
+import { Student } from 'src/app/shared/entities/Student.entity';
+import { AttendanceService } from '../attendence/attendance.service';
+import { Book, BooksBorrowed } from 'src/app/shared/entities/Library.entity';
+import library from 'src/assets/Dummy Data/BookList.json'
+import { LibraryService } from '../library/library.service';
   @Injectable({
     providedIn: 'root'
   })
   export class AuthService {
 
-    constructor(private router:Router) { }
+    constructor(private router:Router, private attendanceService: AttendanceService, private libraryService:LibraryService) { 
+
+    }
     isUser!: string | null;
     storedUsers:User[] = [];
     storedEntitiess:Entity[] = []
@@ -29,6 +38,10 @@ import { Parents } from 'src/app/shared/entities/Parent.entity';
     TeacherTimeTableList: ITeacherTimeTable[] = [];
     ExamInvigilationList: Iinvigilation[] = []
     storedParents: Parents[] = []
+    teacher!: Teacher;
+    classStudents: Student[] = []
+    studentAttendance:attendanceStatus[] = [];
+    library:Book[] = [];
     //checks if a user has logged in
     checkUser(){
       if(localStorage.getItem("user") == "student" || localStorage.getItem("user") == "teacher" || localStorage.getItem("user") == "admin"){
@@ -39,6 +52,21 @@ import { Parents } from 'src/app/shared/entities/Parent.entity';
       }
     }
 
+    getDetails(user:string){
+      if (user ==="student"){
+        return JSON.parse(localStorage.getItem("studentDetails")!)
+      } else if(user === "teacher"){
+        return JSON.parse(localStorage.getItem("teacherDetails")!);
+      }
+    }
+
+    
+    getEmailId():string{
+      return localStorage.getItem("userEmail")!;
+    }
+    getUser():string{
+    return localStorage.getItem("user")!;
+    }
    //login function for any user
     login(loginInfo:ILogin):boolean
     {
@@ -52,33 +80,43 @@ import { Parents } from 'src/app/shared/entities/Parent.entity';
           {
             console.log(this.storedUsers[i].email)
             localStorage.setItem("userEmail", this.storedUsers[i].email);
-
             this.storedEntitiess = entities;
-            console.log(this.storedEntitiess[0].HomeAddress)
-
             this.Holidays = holidays;
             localStorage.setItem("HolidayList", JSON.stringify(this.Holidays));
-
-
+            this.library = library;
+            localStorage.setItem("library", JSON.stringify(this.library));
+            localStorage.setItem("BorrowedBooks", JSON.stringify(this.libraryService.getBorrowedBooks(this.storedUsers[i].id)))
+            // localStorage.setItem("borrowedBooksData", JSON.stringify(this.libraryService.getBorrowedBooks(this.storedUsers[i].id)))
             //if the user accessing is a teacher, load invigilations, Weekly Schedules, userDetails
             if(this.storedUsers[i].role === 'teacher'){
               // alert("Teacher");
-            // localStorage.setItem("teacher", JSON.stringify(this.storedUsers[i]));
-            localStorage.setItem("user", "teacher");
-            
-            this.TeacherTimeTableList = Teacherschedule;
-            localStorage.setItem("TeacherSchedule", JSON.stringify(this.TeacherTimeTableList));
-            
-            this.ExamInvigilationList = InvigilationList;
-            localStorage.setItem("ExamInvigilation", JSON.stringify(this.ExamInvigilationList));
-            
-            this.storedEntitiess = JSON.parse(localStorage["StudentList"]);
-            for(var s of this.storedEntitiess){
-              if (s.Id === this.storedUsers[i].id){
-              localStorage.setItem("teacherDetails", JSON.stringify(s))
-              console.log(localStorage.getItem("teacherDetails"));
+              localStorage.setItem("user", "teacher");
+              
+              this.TeacherTimeTableList = Teacherschedule;
+              localStorage.setItem("TeacherSchedule", JSON.stringify(this.TeacherTimeTableList));
+              
+              this.ExamInvigilationList = InvigilationList;
+              localStorage.setItem("ExamInvigilation", JSON.stringify(this.ExamInvigilationList));
+              
+              console.log(this.storedEntitiess)
+              for(var s of this.storedEntitiess){
+                if (s.Id === this.storedUsers[i].id){
+                localStorage.setItem("teacherDetails", JSON.stringify(s))
+                  this.teacher = new Teacher(s.Id, s.firstName, s.lastName, s.teacherDetails?.dept!, s.teacherDetails?.specialization!, s.teacherDetails?.class!, s.teacherDetails?.section!);
+                  localStorage.setItem("teacher", JSON.stringify(this.teacher))
+                }
               }
-            }
+              //creating a list of the students of the class assigned to teacher 
+              for(var s of this.storedEntitiess){
+                if(s.studentDetails?.class === this.teacher.Class && s.studentDetails.section === this.teacher.section){
+                  this.studentAttendance = this.attendanceService.getStudentattendance(s.studentDetails.class, s.studentDetails.section, s.Id)!;
+                  var percentage:string = String(this.attendanceService.calculatePercentage(this.studentAttendance))
+                  var student = new Student(s.Id, s.firstName, s.lastName,this.studentAttendance,percentage,s.studentDetails.section,s.studentDetails.class,s.studentDetails.parentId)
+                  this.classStudents.push(student);
+                  localStorage.setItem("ClassStudents", JSON.stringify(this.classStudents));
+                }
+              }
+
             }
 
             //if the user accessing is a student, load invigilations, Weekly Schedules, userDetails
@@ -95,6 +133,10 @@ import { Parents } from 'src/app/shared/entities/Parent.entity';
               {
                 if (s.Id === this.storedUsers[i].id)
                 {
+                  this.studentAttendance = this.attendanceService.getStudentattendance(s.studentDetails?.class!, s.studentDetails?.section! , s.Id)!;
+                  var percentage:string = String(this.attendanceService.calculatePercentage(this.studentAttendance))
+                  var student = new Student(s.Id, s.firstName, s.lastName,this.studentAttendance,percentage,s.studentDetails?.section!,s.studentDetails?.class!,s.studentDetails?.parentId!)
+                localStorage.setItem("student", JSON.stringify(student))
                 localStorage.setItem("studentDetails", JSON.stringify(s))
                 for(var p of this.storedParents){
                   if(s.studentDetails?.parentId == p.parentId){
@@ -110,7 +152,7 @@ import { Parents } from 'src/app/shared/entities/Parent.entity';
 
             //AdminLogin, implemented later
             }else if(this.storedUsers[i].role === 'admin'){
-              localStorage.setItem("admin", JSON.stringify(this.storedUsers[i]));
+              localStorage.setItem("adminDetails", JSON.stringify(this.storedUsers[i]));
             localStorage.setItem("user", "admin");
             }
             // alert(localStorage.getItem("student"));
@@ -136,18 +178,25 @@ import { Parents } from 'src/app/shared/entities/Parent.entity';
         this.isUser = localStorage.getItem("user")
         if(this.isUser === "student"){
           localStorage.removeItem("studentDetails");
+          localStorage.removeItem("student");
+          localStorage.removeItem("parentDetails");
           localStorage.removeItem("StudentExams");
           localStorage.removeItem("TimeTableList");
         }else if(this.isUser === "teacher"){
           localStorage.removeItem("teacherDetails");
           localStorage.removeItem("TeacherSchedule");
           localStorage.removeItem("ExamInvigilation");
-          
+          localStorage.removeItem("ClassStudents")
+          localStorage.removeItem("teacher")
         }
       else if(this.isUser === "admin"){
         localStorage.removeItem("adminDetails");
       }
         localStorage.removeItem("user");
+        localStorage.removeItem("userEmail");
+        localStorage.removeItem("HolidayList");
+        localStorage.removeItem("library")
+        localStorage.removeItem("BorrowedBooks")
         this.router.navigate(['/sign_in']);
     
       }

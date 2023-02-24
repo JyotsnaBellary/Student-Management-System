@@ -1,0 +1,33 @@
+<div>
+    <table class="tb-5 mt-2 text-center">
+        <thead>
+        <tr>
+            <th>Student Names</th>
+            <th>Percentage</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let student of attendanceData" class="text-center">
+          <tr>
+            <td *ngIf="student.attendance.length > 0">{{ student.studentId }}</td>
+            <td>{{calculateAttendance(student.attendance)}} %</td>
+            <td  *ngFor="let i of [0,1,2,3,4]">
+                <div *ngIf="student.attendance[i].date != null" class="form-group">
+                <label for="website">Present
+                    <p align="center"><input  type="checkbox" [value]="" (change)="onCheckboxChange($event, student.studentId , student.attendance[i].date)" [checked]="student.attendance[i].status === 1" [disabled]="disable(student.attendance[i].date)"></p>
+                </label>
+              </div>
+              <div *ngIf="student.attendance[i].date == null" class="form-group">
+                <label for="website">No data
+                    <p align="center"><input  type="checkbox" [value]="" (change)="onCheckboxChange($event, student.studentId , student.attendance[i].date)" [checked]="student.attendance[i].status === 1" [disabled]="disable(student.attendance[i].date)"></p>
+                </label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

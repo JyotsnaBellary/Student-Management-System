@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/core/service/auth/auth.service';
 import { IEntity } from '../../entities/Entity.entity';
 
 @Component({
@@ -8,18 +9,15 @@ import { IEntity } from '../../entities/Entity.entity';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
   isUser!: string | null;
   // @Input() details: IEntity | undefined;
    details: IEntity | undefined;
 
   ngOnInit(): void {
-    this.isUser = localStorage.getItem("user")
-    if(this.isUser === "student"){
-    this.details = JSON.parse(localStorage.getItem("studentDetails")!);
-    }if(this.isUser === "teacher"){
-    this.details = JSON.parse(localStorage.getItem("teacherDetails")!);
-
+    this.isUser = this.authService.getUser();
+    if(this.isUser){
+    this.details = this.authService.getDetails(this.isUser)
     }
   }
 }

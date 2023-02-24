@@ -1,0 +1,4 @@
+<button title="see next week" (click)="getPreviousWeek()"><i class="fa-solid fa-arrow-left"></i></button>
+{{getOriginalDate(startDate) | date: 'shortDate'}} - {{getOriginalDate(endDate) | date: 'shortDate'}}
+
+<button title="see next week" (click)="getNextWeek()"><i class="fa-solid fa-arrow-right"></i></button>

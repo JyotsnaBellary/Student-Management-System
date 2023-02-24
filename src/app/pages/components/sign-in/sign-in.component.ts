@@ -20,7 +20,9 @@ export class SignInComponent implements OnInit {
   ) { }
   
   ngOnInit(): void {
-
+    if(this.authService.checkUser()){
+      this.router.navigate(['/dashboard']); 
+    }
   }
 
   checkLogin() {
@@ -28,7 +30,7 @@ export class SignInComponent implements OnInit {
     this.loginSuccess = this.authService.login(loginInformation);
     if(this.loginSuccess == true){
       this.successMessage = "Logged in"
-      this.router.navigate(['/Dashboard']);
+      this.router.navigate(['/dashboard']);
     }  
   }
 

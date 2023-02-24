@@ -1,0 +1,28 @@
+<div class="card">
+  <h5 class="card-header">Library Books Borrowed</h5>
+  <div class="card-body">
+    <a routerLink="/library/books" class="m-2" routerLinkActive="active">Click here to visit E-Library</a>
+
+<div class="center mt-2 scrollable" >
+    <table class="">
+      <thead class="">
+        <tr>
+          <th>BooK Id</th>
+          <th>Book Name</th>
+          <th>Return Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+        <tbody *ngFor="let book of borrowedBooks">
+        <tr>
+          <td>{{book.bookId}}</td>
+          <td><img class="book-image" [src]="book.imagePath" alt="insurgent"><br>book1_name</td>
+          <td>{{book.initialDate | date: 'shortDate'}}</td>
+          <td><button (click)="initiateReturn(book.bookId)">Initiate Return</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+  

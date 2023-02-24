@@ -16,6 +16,17 @@ import { LeaveApplicationComponent } from './pages/components/leave-application/
 import { LeaveTableComponent } from './shared/components/leave-table/leave-table.component';
 import { DashboardContainerComponent } from './shared/components/dashboard-container/dashboard-container.component';
 import { ProfileComponent } from './pages/components/profile/profile.component';
+import { DailyScheduleComponent } from './shared/components/daily-schedule/daily-schedule.component';
+import { AttendenceComponent } from './pages/components/attendence/attendence.component';
+import { AttendanceHeaderComponent } from './shared/components/attendance-header/attendance-header.component';
+import { AttendanceContentComponent } from './shared/components/attendance-content/attendance-content.component';
+import { NavigateAttendanceComponent } from './shared/components/navigate-attendance/navigate-attendance.component';
+import { LibraryComponent } from './shared/components/library/library.component';
+import { BooksComponent } from './shared/components/library/books/books.component';
+import { LibraryProfileComponent } from './shared/components/library/library-profile/library-profile.component';
+import { BorrowCartComponent } from './shared/components/library/borrow-cart/borrow-cart.component';
+import { LibraryOverviewComponent } from './shared/components/library/library-overview/library-overview.component';
+import { PreBookListComponent } from './shared/components/library/pre-book-list/pre-book-list.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +43,18 @@ import { ProfileComponent } from './pages/components/profile/profile.component';
     LeaveApplicationComponent,
     LeaveTableComponent,
     DashboardContainerComponent,
-    ProfileComponent
+    ProfileComponent,
+    DailyScheduleComponent,
+    AttendenceComponent,
+    AttendanceHeaderComponent,
+    AttendanceContentComponent,
+    NavigateAttendanceComponent,
+    LibraryComponent,
+    BooksComponent,
+    LibraryProfileComponent,
+    BorrowCartComponent,
+    LibraryOverviewComponent,
+    PreBookListComponent,
   ],
   imports: [
     BrowserModule,

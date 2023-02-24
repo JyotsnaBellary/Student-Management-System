@@ -14,6 +14,20 @@
 
     },
     {
+        "parentId":"1A002002",
+        "father":{
+            "name":"Charlie Swan",
+            "phoneNumber":"9098776567",
+            "emailId":"charlie@gmail.com"
+        },
+        "mother":{
+            "name":"Renee Swan",
+            "phoneNumber":"9876544567",
+            "emailId":"renee@gmail.com"
+        }
+
+    },
+    {
         "parentId":"2B003003",
         "father":{
             "name":"Carl GG",

@@ -1,0 +1,46 @@
+
+
+  <div class="row">
+    <div class="column left">
+      <a routerLink="/library/myProfile" class="m-2" routerLinkActive="active">Click here to visit profile</a>
+        <div class="center mt-2 sideDivs booklist" >
+            <table class="">
+              <thead class="">
+                <tr>
+                  <th>Id</th>
+                  <th>Book Name</th>
+                  <th>Details</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let book of libraryBooks" >
+                <tr>
+                  <td>{{ book.bookId }}</td>
+                  <td><img class="book-image" [src]="book.imagePath" alt={{book.bookName}}><br> {{ book.bookName }}</td>
+                  <td>Author: {{ book.bookDetails.author }} <br> {{book.bookDetails.gist}}</td>
+                  <td>{{book.status}}</td>
+                  <td> <button class=" btn btn-primary" (click)="preBookThisBook(book)" [disabled] ="book.isAddedToCart || book.isBorrowed" title="pre-book"><span class="material-symbols-outlined">
+                    bookmark
+                    </span></button><br><br>
+                    <button class=" btn btn-primary" (click)="addToBorrowCart(book)" [disabled] ="book.isAddedToCart || book.isBorrowed" title="borrow"><span class="material-symbols-outlined">
+                      add_shopping_cart
+                      </span></button>
+                    
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+    <div class="column right">
+      <div class="sideDivs">
+      <div class="first-half">
+     <app-borrow-cart></app-borrow-cart>
+     </div>
+     <div class="second-half">
+      <app-pre-book-list></app-pre-book-list>
+     </div>
+     </div>
+    </div>
+  </div>
