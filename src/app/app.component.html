@@ -1,6 +1,8 @@
-<app-topnav *ngIf="authService.checkUser()"></app-topnav>
+<!-- <app-topnav *ngIf="authService."></app-topnav> -->
+<app-topnav *ngIf="authService.getIsAuth()" class="topNav"></app-topnav>
 <div class="main ">
-    <app-sidenav *ngIf="authService.checkUser()" class="sideNav"></app-sidenav>
+    <app-sidenav *ngIf="authService.getIsAuth()" class="sideNav"></app-sidenav>
+    <!-- <app-sidenav class="sideNav"></app-sidenav> -->
     <div class="app-route">
         <router-outlet ></router-outlet>
     </div>

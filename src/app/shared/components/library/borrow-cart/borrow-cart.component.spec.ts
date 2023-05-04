@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { BorrowCartComponent } from './borrow-cart.component';
 
@@ -8,7 +9,8 @@ describe('BorrowCartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BorrowCartComponent ]
+      declarations: [ BorrowCartComponent ],
+      imports:[RouterTestingModule.withRoutes([])],
     })
     .compileComponents();
   });

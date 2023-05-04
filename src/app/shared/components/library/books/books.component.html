@@ -18,7 +18,7 @@
                 <tr>
                   <td>{{ book.bookId }}</td>
                   <td><img class="book-image" [src]="book.imagePath" alt={{book.bookName}}><br> {{ book.bookName }}</td>
-                  <td>Author: {{ book.bookDetails.author }} <br> {{book.bookDetails.gist}}</td>
+                  <td>Author: {{ book.author }} <br> {{book.gist}}</td>
                   <td>{{book.status}}</td>
                   <td> <button class=" btn btn-primary" (click)="preBookThisBook(book)" [disabled] ="book.isAddedToCart || book.isBorrowed" title="pre-book"><span class="material-symbols-outlined">
                     bookmark

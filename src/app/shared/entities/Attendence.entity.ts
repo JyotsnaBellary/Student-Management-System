@@ -18,13 +18,13 @@ export class Attendance{
 }
 export class Studentattendance{ //Students
     studentId!:string;
-    attendance!:attendanceStatus[];
-    constructor(studentId:string, attendance:attendanceStatus[]){
+    attendance!:AttendanceStatus[];
+    constructor(studentId:string, attendance:AttendanceStatus[]){
         this.studentId = studentId;
         this.attendance = attendance;
     }
 }
-export class attendanceStatus{
+export class AttendanceStatus{
     date!: Date;
     status!: number;
     constructor(date?: string,

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AttendanceContentComponent } from './attendance-content.component';
 
@@ -8,7 +9,8 @@ describe('AttendanceContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AttendanceContentComponent ]
+      declarations: [ AttendanceContentComponent ],
+      imports:[RouterTestingModule.withRoutes([])],
     })
     .compileComponents();
   });
@@ -20,6 +22,8 @@ describe('AttendanceContentComponent', () => {
   });
 
   it('should create', () => {
+    // console.log(component.date, "date")
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });

@@ -3,6 +3,15 @@ export interface Iparent{
     phoneNumber:string;
     emailId:string;
 }
+export interface IParents {
+    parentId: string,
+    fatherName: string,
+    phonesNumberOfFather: string,
+    emailOfFather: string,
+    motherName: string,
+    phonesNumberOfMother: string,
+    emailOfMother: string,
+}
 export class Parents{
     parentId!:string;
     father!:Iparent;

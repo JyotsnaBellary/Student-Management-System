@@ -22,7 +22,9 @@ export class Book{
     bookId:string;
     bookName:string;
     imagePath:string;
-    bookDetails: IbookDetails;
+    // bookDetails: IbookDetails;
+    author:string;
+    gist:string;
     status:string;
     quantity:number;
     isAddedToCart?:boolean;
@@ -30,14 +32,18 @@ export class Book{
     constructor(bookId:string,
         bookName:string,
         imagePath:string,
-        bookDetails: IbookDetails,
+        // bookDetails: IbookDetails,
+        author:string,
+        gist:string,
         status:string,
         quantity:number){
 
             this.bookId = bookId;
             this.bookName = bookName;
             this.imagePath = imagePath;
-            this.bookDetails = bookDetails;
+            // this.bookDetails = bookDetails;
+            this.author = author;
+            this.gist = gist;
             this.status = status;
             this.quantity = quantity;
         }

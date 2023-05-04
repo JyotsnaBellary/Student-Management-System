@@ -1,7 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { LibraryService } from 'src/app/core/service/library/library.service';
+import { AuthService } from 'src/app/core/service/crud/auth/auth.service';
+import { LibraryService } from 'src/app/core/service/crud/library/library.service';
+// import { LibraryService } from 'src/app/core/service/crud/library/library.service';
+// import { LibraryService } from 'src/app/core/service/library/library.service';
 import { BorrowCart, IBorrowCart } from 'src/app/shared/entities/Library.entity';
 
 @Component({
@@ -12,7 +15,8 @@ import { BorrowCart, IBorrowCart } from 'src/app/shared/entities/Library.entity'
 export class BorrowCartComponent implements OnInit, OnDestroy {
 
   constructor(private libraryService:LibraryService,
-              private router:Router) { }
+              private router:Router,
+              private authService:AuthService) { }
   
   borrowCart:IBorrowCart[] = [];
   private subscriptions:Subscription[] = [];
@@ -44,7 +48,7 @@ export class BorrowCartComponent implements OnInit, OnDestroy {
   }
 
   borrowBooks(borrowCart:IBorrowCart[]){
-    let message = this.libraryService.borrowTheseBooks(borrowCart);
+    let message = this.libraryService.borrowTheseBooks(borrowCart, this.authService.getUserId());
     alert(message)
     this.borrowCart = [];
     this.router.navigate(['library/myProfile']); 

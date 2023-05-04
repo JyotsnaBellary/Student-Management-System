@@ -6,26 +6,28 @@
     <table class="">
         <thead>
         <tr>
+            <th *ngIf="issuer == 'teacher'">Action</th>
             <th  *ngIf="issuer == 'teacher'">Student Id</th>
             <th  *ngIf="issuer == 'teacher'">Student Name</th>
-            <th>Status</th>
+            <th  *ngIf="issuer == 'teacher'">Class</th>
+            <th  *ngIf="issuer == 'teacher'">Section</th>
             <th>Date</th>
             <th>Reason</th>
+            <th>Status</th>
            
           </tr>
         </thead>
         <tbody *ngFor="let leave of storedLeaves">
-          <tr *ngIf="issuer == 'teacher'">
-            <td>{{leave.studentId}}</td>
-            <td>{{leave.studentName}}</td>
-            <td>{{ leave.status }}</td>
-            <td>{{ leave.fromDate }}</td>
+          <!-- <tr *ngIf="issuer == 'teacher'"> -->
+          <tr *ngIf="leave.userId != userId">
+            <td *ngIf="issuer == 'teacher'"><button [disabled]="leave.status === 'Approved' || leave.userId === userId" (click)="approveOfLeave(leave.userId, leave.fromDate, leave.toDate)">Approve</button></td>
+            <td *ngIf="issuer == 'teacher'">{{leave.userId}}</td>
+            <td *ngIf="issuer == 'teacher'">{{leave.firstName}} {{leave.lastName}}</td>
+            <td *ngIf="issuer == 'teacher'">{{leave.Class}}</td>
+            <td *ngIf="issuer == 'teacher'">{{leave.section}}</td>
+            <td>{{ leave.fromDate | date: 'shortDate'}}<span *ngIf="leave.fromDate != leave.toDate"> - {{ leave.toDate | date: 'shortDate'}}</span></td>
             <td>{{ leave.reason }}</td>
-          </tr>
-          <tr *ngIf="issuer == 'student' && leave.studentId == userIn.studentId">
             <td>{{ leave.status }}</td>
-            <td>{{ leave.fromDate | date: 'dd/MM/yyyy'}}</td>
-            <td>{{ leave.reason }}</td>
           </tr>
 
         </tbody>
@@ -34,3 +36,4 @@
   </div>
 </div>
 </div>
+<br>

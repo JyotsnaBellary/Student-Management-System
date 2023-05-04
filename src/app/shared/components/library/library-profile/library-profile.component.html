@@ -4,7 +4,7 @@
     <a routerLink="/library/books" class="m-2" routerLinkActive="active">Click here to visit E-Library</a>
 
 <div class="center mt-2 scrollable" >
-    <table class="">
+    <table class="" >
       <thead class="">
         <tr>
           <th>BooK Id</th>
@@ -22,6 +22,7 @@
         </tr>
       </tbody>
     </table>
+    <p class="alert" *ngIf="!borrowedBooks">{{ message }}</p>
   </div>
 </div>
 </div>

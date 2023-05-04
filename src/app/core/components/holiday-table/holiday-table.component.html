@@ -11,8 +11,8 @@
               </tr>
             </thead>
             <tbody *ngFor="let i of [0,1,2,3]">
-              <tr>
-                <td>{{ holidays[i].date }}</td>
+              <tr *ngIf="holidays[i]">
+                <td>{{ holidays[i].date | date: 'shortDate'}}</td>
                 <td>{{ holidays[i].holiday }}</td>
                 <td>{{ holidays[i].day }}</td>
               </tr>

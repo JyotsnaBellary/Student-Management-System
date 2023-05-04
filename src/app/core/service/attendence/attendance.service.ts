@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Attendance, attendanceStatus, iattendanceStatus, iStudentattendance, Studentattendance } from 'src/app/shared/entities/Attendence.entity';
+import { Attendance, AttendanceStatus, iattendanceStatus, iStudentattendance, Studentattendance } from 'src/app/shared/entities/Attendence.entity';
 import attendance from 'src/assets/Dummy Data/Attendence.json'
 import moment, { Moment } from 'moment';
 import { Student } from 'src/app/shared/entities/Student.entity';
@@ -15,16 +15,16 @@ export class AttendanceService {
 
   constructor() { }
   attendanceList: Attendance[] = attendance;
-  status!: attendanceStatus;
+  status!: AttendanceStatus;
   getStudentattendance(Class:string, section:string, studentId:string){
-  var studentAttendance: attendanceStatus[] = [];
+  var studentAttendance: AttendanceStatus[] = [];
 
     for(var classList of this.attendanceList){
       if(classList.Class === Class && classList.section === section){
         for(var each of classList.students){
           if(each.studentId === studentId){
             for(var statuses of each.attendance){
-              studentAttendance.push(new attendanceStatus(statuses.date, statuses.status));
+              studentAttendance.push(new AttendanceStatus(statuses.date, statuses.status));
             }
             break;
           }
@@ -38,7 +38,7 @@ export class AttendanceService {
     this.date.next(date)
   }
 
-  calculatePercentage(attendance?:attendanceStatus[], studentsOfClass?: Student[]){
+  calculatePercentage(attendance?:AttendanceStatus[], studentsOfClass?: Student[]){
     var count:number = 0;
     var percentage: number = 0;
     if(attendance){
@@ -95,9 +95,10 @@ getLastWeekEnd(currentWeekEnd: Moment) {
 }
 
   getWeeklyStudentAttendence(student:Student, weekStart:any, weekEnd:any){
+    console.log(moment(weekStart).date(), weekEnd);
     var now = moment();
     var studentAttendanceThisWeek: Studentattendance[] = [];
-    var thisWeek:attendanceStatus[] = [];
+    var thisWeek:AttendanceStatus[] = [];
   for(var status of student.attendanceList){
     if(moment(status.date).isBetween(weekStart, weekEnd) || moment(status.date) === weekStart || moment(status.date) === weekEnd){
       thisWeek.push(status);
@@ -116,7 +117,7 @@ getLastWeekEnd(currentWeekEnd: Moment) {
     var isNowWeekday = now.isBetween(monday, friday, null, '[]');
 var studentAttendanceThisWeek: Studentattendance[] = [];
 for(var each of studentsOfClass){
-var thisWeek:attendanceStatus[] = [];
+var thisWeek:AttendanceStatus[] = [];
   for(var status of each.attendanceList){
     if(moment(status.date).isBetween(monday, friday)){
       thisWeek.push(status);

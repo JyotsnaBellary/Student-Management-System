@@ -1,27 +1,38 @@
 export interface iLeave{
-    date:Date;
+    fromDate:Date;
+    toDate?: Date,
     reason:string;
 }
 
 export class LeaveApplication{
-    studentId:string;
-    studentName:string;
-    fromDate:Date;
-    toDate!: Date;
-    reason:string;
-    status:string;
+    userId:string;
+    firstName:string;
+    lastName:string;
+    Class: string;
+    section: string;
+    fromDate : Date;
+    toDate !: Date;
+    reason : string;
+    status : string;
     
-    constructor(studentId:string, studentName:string,fromDate:Date, reason:string,  status:string = "Applied", toDate?:Date){
+    constructor(userId:string, firstName:string, lastName:string, Class:string, section:string, fromDate:Date, reason:string,  status:string = "Applied", toDate?:Date){
         if(toDate){
-        this.studentId = studentId;
-        this.studentName = studentName;
+        this.userId = userId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.Class = Class;
+        this.section = section;
         this.fromDate = fromDate;
         this.toDate = toDate;
         this.reason = reason;
         this.status = status;
+        
         }else{
-            this.studentId = studentId;
-            this.studentName = studentName;
+            this.userId = userId;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.Class = Class;
+            this.section = section;
             this.fromDate = fromDate;
             this.reason = reason;
             this.status = status;

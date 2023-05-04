@@ -5,6 +5,10 @@ table {
     border: 1px solid #ddd;
   }
   
+  .card-body{
+    height: 300px;
+  }
+
   th, td {
     text-align: left;
     padding: 10px;

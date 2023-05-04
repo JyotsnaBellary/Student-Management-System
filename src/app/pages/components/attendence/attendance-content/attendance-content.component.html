@@ -13,21 +13,27 @@
         </thead>
         <tbody *ngFor="let student of attendanceData" class="text-center">
           <tr>
-            <td *ngIf="student.attendance.length > 0">{{ student.studentId }}</td>
-            <td>{{calculateAttendance(student.attendance)}} %</td>
+            <td>{{ student.studentId }}</td>
+            <td>
+              <div *ngIf="student.attendance.length > 0">{{calculateAttendance(student.attendance)}} %</div>
+              <div *ngIf="student.attendance.length == 0">0 %</div>
+            </td>
             <td  *ngFor="let i of [0,1,2,3,4]">
-                <div *ngIf="student.attendance[i].date != null" class="form-group">
+              <div *ngIf="student.attendance.length > 0" class="form-group">
                 <label for="website">Present
                     <p align="center"><input  type="checkbox" [value]="" (change)="onCheckboxChange($event, student.studentId , student.attendance[i].date)" [checked]="student.attendance[i].status === 1" [disabled]="disable(student.attendance[i].date)"></p>
                 </label>
               </div>
-              <div *ngIf="student.attendance[i].date == null" class="form-group">
+              <div *ngIf="student.attendance.length == 0" class="form-group">
                 <label for="website">No data
-                    <p align="center"><input  type="checkbox" [value]="" (change)="onCheckboxChange($event, student.studentId , student.attendance[i].date)" [checked]="student.attendance[i].status === 1" [disabled]="disable(student.attendance[i].date)"></p>
+                    <p align="center"><input  type="checkbox" [value]=""  [disabled]="true"></p>
                 </label>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
+</div>
+<div *ngIf="toUpdate.length != 0">
+<button  class="" (click)="save()">Submit</button>
 </div>
