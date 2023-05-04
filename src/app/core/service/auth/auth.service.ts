@@ -15,7 +15,7 @@ import  InvigilationList  from 'src/assets/Dummy Data/Invigilation.json'
 import storedParents from "src/assets/Dummy Data/Parent.json"
 import { Parents } from 'src/app/shared/entities/Parent.entity';
 import { Teacher } from 'src/app/shared/entities/Teacher.entity';
-import { Attendance, attendanceStatus, Studentattendance } from 'src/app/shared/entities/Attendence.entity';
+import { Attendance, AttendanceStatus, Studentattendance } from 'src/app/shared/entities/Attendence.entity';
 import { Student } from 'src/app/shared/entities/Student.entity';
 import { AttendanceService } from '../attendence/attendance.service';
 import { Book, BooksBorrowed } from 'src/app/shared/entities/Library.entity';
@@ -40,7 +40,7 @@ import { LibraryService } from '../library/library.service';
     storedParents: Parents[] = []
     teacher!: Teacher;
     classStudents: Student[] = []
-    studentAttendance:attendanceStatus[] = [];
+    studentAttendance:AttendanceStatus[] = [];
     library:Book[] = [];
     //checks if a user has logged in
     checkUser(){
@@ -79,13 +79,10 @@ import { LibraryService } from '../library/library.service';
           if(this.storedUsers[i].password === loginInfo.password)
           {
             localStorage.setItem("userEmail", this.storedUsers[i].email);
-            this.storedEntitiess = entities;
+            // this.storedEntitiess = entities;
             this.Holidays = holidays;
             localStorage.setItem("HolidayList", JSON.stringify(this.Holidays));
-            this.library = library;
-            localStorage.setItem("library", JSON.stringify(this.library));
-            localStorage.setItem("BorrowedBooks", JSON.stringify(this.libraryService.getBorrowedBooks(this.storedUsers[i].id)))
-            // localStorage.setItem("borrowedBooksData", JSON.stringify(this.libraryService.getBorrowedBooks(this.storedUsers[i].id)))
+            // this.library = library;
             //if the user accessing is a teacher, load invigilations, Weekly Schedules, userDetails
             if(this.storedUsers[i].role === 'teacher'){
               // alert("Teacher");
@@ -100,7 +97,7 @@ import { LibraryService } from '../library/library.service';
               for(var s of this.storedEntitiess){
                 if (s.Id === this.storedUsers[i].id){
                 localStorage.setItem("teacherDetails", JSON.stringify(s))
-                  this.teacher = new Teacher(s.Id, s.firstName, s.lastName, s.teacherDetails?.dept!, s.teacherDetails?.specialization!, s.teacherDetails?.class!, s.teacherDetails?.section!);
+                  this.teacher = new Teacher(s.Id, s.firstName, s.lastName, s.teacherDetails?.department!, s.teacherDetails?.specialization!, s.teacherDetails?.class!, s.teacherDetails?.section!);
                   localStorage.setItem("teacher", JSON.stringify(this.teacher))
                 }
               }
@@ -189,8 +186,7 @@ import { LibraryService } from '../library/library.service';
         localStorage.removeItem("HolidayList");
         localStorage.removeItem("library")
         localStorage.removeItem("BorrowedBooks")
-        this.router.navigate(['/sign_in']);
-    
+        return 'logged out';
       }
     }
 

@@ -2,21 +2,76 @@
     <h5 class="card-header">Apply Leave</h5>
     <div class="alert alert-success" *ngIf="successMessage">{{successMessage}}</div>
     <div class="card-body">
-    <form class="form-group" ngNativeValidate>
+        <label for="website">More daysss</label>
+        <input type="checkbox" [(ngModel)]="moreDays" (click)="onCheckboxChange($event)" />
+      <form [formGroup]="leaveApplicationForm" (ngSubmit)="save()">
+        
+        <div class="row mt-2" formGroupName="leaveData">
+          <div class="col-md-3">
+            <label class="labels" for="fromDate">On/From Date</label>
+            <input type="date" 
+            class="form-control" 
+            id="fromDate" 
+            formControlName = "fromDate" 
+            required>
+          </div>
+          <span
+              *ngIf="!leaveApplicationForm.get('leaveData.fromDate')?.valid && leaveApplicationForm.get('leaveData.fromDate')?.touched"
+              class="help-block"> 
+              <span *ngIf="leaveApplicationForm.get('leaveData.fromDate')?.errors?.['required']" class="alert">This field is required!</span>
+          </span>
+          <div class="col-md-3"  *ngIf="moreDays">
+            <label class="labels">End Date</label>
+            <input type="date" 
+            class="form-control" 
+            id="toDate"
+            formControlName = "toDate" 
+            required
+            >
+          </div>
+          <span
+              *ngIf="!leaveApplicationForm.get('leaveData.toDate')?.valid && leaveApplicationForm.get('leaveData.toDate')?.touched"
+              class="help-block"> 
+              <span *ngIf="leaveApplicationForm.get('leaveData.toDate')?.errors?.['required']" class="alert">This field is required!</span>
+          </span>
+        <div class="col-md-6">
+          <label class="labels">Leave Reason</label>
+          <input type="text" 
+          class="form-control" 
+          id="reason" 
+          formControlName = "reason" 
+          required>
+      </div>
+
+      <span
+          *ngIf="!leaveApplicationForm.get('leaveData.reason')?.valid && leaveApplicationForm.get('leaveData.reason')?.touched"
+          class="help-block"> 
+          <!-- <span *ngIf="leaveApplicationForm.get('userData.username').errors['nameIsForbidden']">This name is invalid!</span> -->
+          <span *ngIf="leaveApplicationForm.get('leaveData.reason')?.errors?.['required']" class="alert">This field is required!</span>
+      </span>
+      </div>
+      <span
+          *ngIf="!leaveApplicationForm.valid && leaveApplicationForm.touched"
+          class="help-block">Please enter valid data!</span>
+        <button *ngIf="leaveApplicationForm.valid" class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    <!-- <form  class="form-group" ngNativeValidate>
         <form [formGroup]="form" (ngsubmit)="submit()">
             <div class="form-group">
               <label for="website">More days</label>
                   <input type="checkbox" [value]="" (change)="onCheckboxChange($event)" />
           </div>
-          </form>
+        </form>
         <div class="row mt-2">
             <div class="col-md-3"><label class="labels">On/From Date</label><input type="date" class="form-control" id="fromDate" [(ngModel)]="fromDate" name="fromDate" required></div>
             <div class="col-md-3" *ngIf="moreDays"><label class="labels">End Date</label><input type="date" class="form-control" id="toDate" [(ngModel)]="toDate" name="ToDate" required></div>
         </div>
         <div class="col-md-6"><label class="labels">Leave Reason</label><input type="text" class="form-control" id="reason" [(ngModel)]="reason" name="reason" required></div>
         <div class="text-center text-lg-start mt-4 pt-2">
-            <button (click)="save()" style="background-color: #212529;" class="btn btn-success"><h5>Submit</h5></button>
+          <button (click)="save()" style="background-color: #212529;" class="btn btn-success"><h5>Submit</h5></button>
         </div>
-        </form>
+        </form> -->
     </div>
   </div>
+
+<app-leave-table></app-leave-table>

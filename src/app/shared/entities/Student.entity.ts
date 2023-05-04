@@ -1,10 +1,10 @@
-import { attendanceStatus, iattendanceStatus } from "./Attendence.entity";
+import { AttendanceStatus, iattendanceStatus } from "./Attendence.entity";
 
 export class Student{
     studentId:string;
     firstName:string;
     lastName:string;
-    attendanceList: attendanceStatus[];
+    attendanceList: AttendanceStatus[];
     attendancePercentage: string;
     section: string;
     Class: string;
@@ -12,7 +12,7 @@ export class Student{
     constructor(studentId:string,
         firstName:string,
         lastName:string,
-        attendanceList: attendanceStatus[],
+        attendanceList: AttendanceStatus[],
         attendancePercentage: string,
         section: string,
         Class: string,

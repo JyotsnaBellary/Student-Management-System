@@ -1,7 +1,7 @@
 export class Entity{
     public Id: string | any;
     public firstName: string | any;
-    public lastName!: string;
+    public lastName: string | any;
     studentDetails? : StudentDetails;
     teacherDetails? : ITeacherDetails;
     adminDetails? : IAdminDetails;
@@ -42,13 +42,21 @@ export class Entity{
    
 }
 export interface IEntity {
-    Id: string | any;
+    userId: string | any;
+    email: string | any;
     firstName: string | any;
     lastName: string;
-    studentDetails? : StudentDetails;
-    teacherDetails? : ITeacherDetails;
-    adminDetails? : IAdminDetails;
-    HomeAddress : IAddress;
+    // studentDetails? : StudentDetails;
+    // teacherDetails? : ITeacherDetails;
+    // adminDetails? : IAdminDetails;
+    // HomeAddress : IAddress;
+    Class: string;
+    section: string;
+    department?: string;
+    specialization?: string;
+    parentId?: string;
+    currentAddress: string;
+    permanentAddress: string;
 }
 export interface IAddress {
     currentAddress: string;
@@ -60,12 +68,12 @@ export interface StudentDetails {
     parentId: string;
 }
 export interface ITeacherDetails {
-    dept: string;
+    department: string;
     specialization: string;
     class: string;
     section: string;
 }
 export interface IAdminDetails {
-    dept: string;
+    department: string;
     specialization: string
 }

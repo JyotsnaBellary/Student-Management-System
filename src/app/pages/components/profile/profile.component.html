@@ -13,39 +13,39 @@
                     <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="{{details?.lastName}}" placeholder="surname" disabled></div>
                 </div>
                 <div class="row mt-2">
-                    <div *ngIf="details?.studentDetails" class="col-md-6"><label class="labels">Student Id</label><input type="text" class="form-control" placeholder="student id" value="{{details?.Id}}" disabled></div>
-                    <div *ngIf="details?.teacherDetails" class="col-md-6"><label class="labels">Teacher Id</label><input type="text" class="form-control" placeholder="student id" value="{{details?.Id}}" disabled></div>
-                    <div *ngIf="details?.studentDetails?.parentId" class="col-md-6"><label class="labels">Parent Id</label><input type="text" class="form-control" value="{{details?.studentDetails?.parentId}}" placeholder="surname" disabled></div>
+                    <div *ngIf="role === 'student'" class="col-md-6"><label class="labels">Student Id</label><input type="text" class="form-control" placeholder="student id" value="{{details?.userId}}" disabled></div>
+                    <div *ngIf="role === 'teacher'" class="col-md-6"><label class="labels">Teacher Id</label><input type="text" class="form-control" placeholder="teacher id" value="{{details?.userId}}" disabled></div>
+                    <div *ngIf="details?.parentId" class="col-md-6"><label class="labels">Parent Id</label><input type="text" class="form-control" value="{{details?.parentId}}" placeholder="surname" disabled></div>
                 </div>
-                <div  *ngIf="details?.studentDetails"  class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Class</label><input type="text" class="form-control" placeholder="first name" value="{{details?.studentDetails?.class}}" disabled></div>
-                    <div class="col-md-6"><label class="labels">Section</label><input type="text" class="form-control" value="{{ details?.studentDetails?.section }}" placeholder="surname" disabled></div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Class</label><input type="text" class="form-control" placeholder="Class" value="{{details?.Class}}" disabled></div>
+                    <div class="col-md-6"><label class="labels">Section</label><input type="text" class="form-control" value="{{ details?.section }}" placeholder="Section" disabled></div>
                 </div> 
-                <div  *ngIf="details?.teacherDetails" class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Department</label><input type="text" class="form-control" placeholder="first name" value="{{details?.teacherDetails?.dept}}" disabled></div>
-                    <div class="col-md-6"><label class="labels">specialization</label><input type="text" class="form-control" value="{{ details?.teacherDetails?.specialization}}" placeholder="surname" disabled></div>
+                <div  *ngIf="role === 'teacher'" class="row mt-2">
+                    <div class="col-md-6"><label class="labels">Department</label><input type="text" class="form-control" placeholder="department" value="{{details?.department}}" disabled></div>
+                    <div class="col-md-6"><label class="labels">specialization</label><input type="text" class="form-control" value="{{ details?.specialization}}" placeholder="specialization" disabled></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Email Id</label><input type="text" class="form-control" placeholder="enter address line 2" value="{{emailId}}" disabled></div>
-                    <div class="col-md-12"><label class="labels">Permanent Address</label><input type="text" class="form-control" placeholder="enter address line 2" value="" disabled></div>
-                    <div class="col-md-12"><label class="labels">Current Address</label><input type="text" class="form-control" placeholder="enter address line 1" value="{{details?.HomeAddress?.currentAddress}}"></div>
+                    <div class="col-md-12"><label class="labels">Email Id</label><input type="text" class="form-control" placeholder="emailId" value="{{details?.email}}" disabled></div>
+                    <div class="col-md-12"><label class="labels">Permanent Address</label><input type="text" class="form-control" placeholder="Permanent Address" value="{{details?.permanentAddress}}" disabled></div>
+                    <div class="col-md-12"><label class="labels">Current Address</label><input type="text" class="form-control" placeholder="enter address line 1" value="{{details?.currentAddress}}"></div>
                 </div>
                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
             </div>
         </div>
-        <div class="col-md-6" *ngIf="details?.studentDetails">
+        <div class="col-md-6" *ngIf="details?.parentId">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center experience"><span>Parent Details</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Edit</span></div><br>
                 <div class="col-md-12"><label class="labels">Parent Id</label><input type="text" class="form-control" placeholder="experience" value="{{parentDetails.parentId}}" disabled></div> <br>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Mother's Name</label><input type="text" class="form-control" placeholder="first name" value="{{parentDetails.mother.name}}" disabled></div>
-                    <div class="col-md-6"><label class="labels">Phone Number</label><input type="text" class="form-control" value="{{parentDetails.mother.phoneNumber}}" placeholder="surname" disabled></div>
-                    <div class="col-md-12 mt-1"><label class="labels">Email Id</label><input type="text" class="form-control" placeholder="enter address line 1" value="{{parentDetails.mother.emailId}}" disabled></div>
+                    <div class="col-md-6"><label class="labels">Mother's Name</label><input type="text" class="form-control" placeholder="Mother's name" value="{{parentDetails.motherName}}" disabled></div>
+                    <div class="col-md-6"><label class="labels">Phone Number</label><input type="text" class="form-control" value="{{parentDetails.phonesNumberOfMother}}" placeholder="Phone Number" disabled></div>
+                    <div class="col-md-12 mt-1"><label class="labels">Email Id</label><input type="text" class="form-control" placeholder="Email" value="{{parentDetails.emailOfMother}}" disabled></div>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Father's Name</label><input type="text" class="form-control" placeholder="first name" value="{{parentDetails.father.name}}" disabled></div>
-                    <div class="col-md-6"><label class="labels">Phone Number</label><input type="text" class="form-control" value="{{parentDetails.father.phoneNumber}}" placeholder="surname" disabled></div>
-                    <div class="col-md-12 mt-1"><label class="labels">Email Id</label><input type="text" class="form-control" placeholder="enter address line 1" value="{{parentDetails.father.emailId}}" disabled></div>
+                    <div class="col-md-6"><label class="labels">Father's Name</label><input type="text" class="form-control" placeholder="Name" value="{{parentDetails.fatherName}}" disabled></div>
+                    <div class="col-md-6"><label class="labels">Phone Number</label><input type="text" class="form-control" value="{{parentDetails.phonesNumberOfFather}}" placeholder="Phone Number" disabled></div>
+                    <div class="col-md-12 mt-1"><label class="labels">Email Id</label><input type="text" class="form-control" placeholder="Email" value="{{parentDetails.emailOfFather}}" disabled></div>
                     
                 </div>
             </div>

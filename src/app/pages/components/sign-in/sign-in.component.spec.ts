@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AuthService } from 'src/app/core/service/auth/auth.service';
 
 import { SignInComponent } from './sign-in.component';
 
@@ -8,7 +10,9 @@ describe('SignInComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignInComponent ]
+      declarations: [ SignInComponent ],
+      imports:[RouterTestingModule.withRoutes([])],
+      providers:[{provide:AuthService}]
     })
     .compileComponents();
   });
@@ -16,10 +20,29 @@ describe('SignInComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SignInComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('check click event of login', () => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+        component.email = "anne@gmail.com"
+        component.password = "12345"
+        component.successMessage = ""
+        console.log(component.successMessage, "here")
+        // const element: HTMLButtonElement = fixture.debugElement.nativeElement.querySelector('#loginButton')
+        // element.click();
+        // expect(component.successMessage).toEqual('Logged in')
+        console.log(component.successMessage)
+
+    });
+  });
+
+  it('checking Login', () => {
+      component.email = "anne@gmail.com"
+      component.password = "1234"
   });
 });

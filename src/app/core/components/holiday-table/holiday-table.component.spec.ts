@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Holiday } from 'src/app/shared/entities/holiday.entity';
 
 import { HolidayTableComponent } from './holiday-table.component';
 
@@ -20,6 +21,8 @@ describe('HolidayTableComponent', () => {
   });
 
   it('should create', () => {
+    let holidays: Holiday[] = JSON.parse(localStorage.getItem('HolidayList')!);
     expect(component).toBeTruthy();
+    expect(component.holidays).toEqual(holidays)
   });
 });

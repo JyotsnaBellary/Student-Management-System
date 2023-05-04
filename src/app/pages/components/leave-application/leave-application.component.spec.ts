@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LeaveApplicationComponent } from './leave-application.component';
 
 describe('LeaveApplicationComponent', () => {
@@ -8,7 +8,8 @@ describe('LeaveApplicationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LeaveApplicationComponent ]
+      declarations: [ LeaveApplicationComponent ],
+      imports:[ReactiveFormsModule, FormsModule ]
     })
     .compileComponents();
   });

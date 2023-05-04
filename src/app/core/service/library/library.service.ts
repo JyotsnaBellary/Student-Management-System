@@ -40,7 +40,7 @@ export class LibraryService {
     // var books:Book[] = this.libraryBooks;
     for(var book of books){
       if(book.bookId === bookID){
-        return book = new Book(book.bookId,book.bookName,book.imagePath, book.bookDetails, book.status, book.quantity)
+        return book = new Book(book.bookId,book.bookName,book.imagePath, book.author, book.gist, book.status, book.quantity)
       }
     }
     return

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TopnavComponent } from './core/components/topnav/topnav.component';
 import { SidenavComponent } from './core/components/sidenav/sidenav.component';
@@ -18,15 +20,17 @@ import { DashboardContainerComponent } from './shared/components/dashboard-conta
 import { ProfileComponent } from './pages/components/profile/profile.component';
 import { DailyScheduleComponent } from './shared/components/daily-schedule/daily-schedule.component';
 import { AttendenceComponent } from './pages/components/attendence/attendence.component';
-import { AttendanceHeaderComponent } from './shared/components/attendance-header/attendance-header.component';
-import { AttendanceContentComponent } from './shared/components/attendance-content/attendance-content.component';
-import { NavigateAttendanceComponent } from './shared/components/navigate-attendance/navigate-attendance.component';
+import { AttendanceHeaderComponent } from './pages/components/attendence/attendance-header/attendance-header.component';
+import { AttendanceContentComponent } from './pages/components/attendence/attendance-content/attendance-content.component';
+import { NavigateAttendanceComponent } from './pages/components/attendence/navigate-attendance/navigate-attendance.component';
 import { LibraryComponent } from './shared/components/library/library.component';
 import { BooksComponent } from './shared/components/library/books/books.component';
 import { LibraryProfileComponent } from './shared/components/library/library-profile/library-profile.component';
 import { BorrowCartComponent } from './shared/components/library/borrow-cart/borrow-cart.component';
 import { LibraryOverviewComponent } from './shared/components/library/library-overview/library-overview.component';
 import { PreBookListComponent } from './shared/components/library/pre-book-list/pre-book-list.component';
+import { SearchComponent } from './core/components/search/search.component';
+import { AuthInterceptor } from './core/service/crud/auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -55,14 +59,21 @@ import { PreBookListComponent } from './shared/components/library/pre-book-list/
     BorrowCartComponent,
     LibraryOverviewComponent,
     PreBookListComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    RouterModule,
+    HttpClientModule
+    // RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

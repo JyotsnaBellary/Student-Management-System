@@ -9,7 +9,7 @@
       </thead>
       <tbody *ngFor="let holiday of holidays">
         <tr>
-          <td>{{ holiday.date }}</td>
+          <td>{{ holiday.date | date: 'shortDate' }}</td>
           <td>{{ holiday.holiday }}</td>
           <td>{{ holiday.day }}</td>
         </tr>

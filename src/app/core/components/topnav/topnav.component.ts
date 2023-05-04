@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../service/auth/auth.service';
+import { Route, Router } from '@angular/router';
+import { AuthService } from '../../service/crud/auth/auth.service';
+import { CrudService } from '../../service/crud/crud.service';
+import { IEntity } from 'src/app/shared/entities/Entity.entity';
+// import { AuthService } from '../../service/auth/auth.service';
 
 @Component({
   selector: 'app-topnav',
@@ -7,13 +11,20 @@ import { AuthService } from '../../service/auth/auth.service';
   styleUrls: ['./topnav.component.css']
 })
 export class TopnavComponent implements OnInit {
-  constructor(public loginService:AuthService){}
+  constructor(public loginService:AuthService, private router:Router, private detailsService:CrudService){}
   emailId!: string;
   ngOnInit(): void {
-  this.emailId = this.loginService.getEmailId();
+  this.detailsService.getUserDetails().subscribe(userDetails => {
+    let details: IEntity = userDetails.userDetails;
+    this.emailId = details.email;
+  });
+  // this.emailId = this.loginService.getUserEmail();
 
   }
   logout(){
-    this.loginService.logout();
+    let message:string = this.loginService.logout();
+    if(message === 'logged out'){
+      this.router.navigate(['/sign_in']);
+    }
   }
 }

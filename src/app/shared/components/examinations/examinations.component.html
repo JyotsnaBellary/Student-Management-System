@@ -1,3 +1,6 @@
+<h2 *ngIf="examInvigilations" style="text-align: center">Invigilation Schedule</h2>
+<h2 *ngIf="examschedule" style="text-align: center">Examination Schedule</h2>
+<br>
 <table class="table-bordered" border="5" cellspacing="0" align="center">
     <!--<caption>Timetable</caption>-->
     <thead>
@@ -25,25 +28,26 @@
         </td>
     </tr>
     </thead>
-    <tbody *ngFor="let f of examInvigilations">
-        <tr *ngIf="f.teacherId === details?.Id">
+    <tbody *ngFor="let invigilatioInfo of examInvigilations">
+        <!-- <tr *ngIf="f.teacherId === details?.Id"> -->
+        <tr>
             <td align="center" height="50">
-                <b>{{f.Class}}</b></td>
+                <b>{{invigilatioInfo.Class}}</b></td>
             <td align="center" height="50">
-                <b>{{f.Section}}</b></td>
+                <b>{{invigilatioInfo.Section}}</b></td>
             <td align="center" height="50">
-                <b>{{f.schedule.date}}</b></td>
+                <b>{{invigilatioInfo.schedule.date | date: 'shortDate'}}</b></td>
             <td align="center" height="50">
-                <b>{{f.schedule.day}}</b></td>
+                <b>{{invigilatioInfo.schedule.day}}</b></td>
             <td align="center" height="50">
-                <b>{{f.schedule.subject}}</b></td>
+                <b>{{invigilatioInfo.schedule.subject}}</b></td>
         </tr>
     </tbody>
 
-    <tbody *ngFor="let exam of examschedule">
+     <tbody *ngFor="let exam of examschedule">
         <tr>
             <td align="center" height="50">
-                <b>{{exam.date}}</b></td>
+                <b>{{exam.date | date: 'shortDate'}}</b></td>
             <td align="center" height="50">
                 <b>{{exam.day}}</b></td>
             <td align="center" height="50">

@@ -9,6 +9,10 @@
     padding: 10px;
     height: 335px; /* Should be removed. Only for demonstration */
   }
+
+  .row{
+    margin: 0% 0% 1% 0%;
+  }
   
   /* Clear floats after the columns */
   .row:after {

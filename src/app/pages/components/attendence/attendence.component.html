@@ -2,10 +2,12 @@
     <h5 class="card-header">Attendance Details</h5>
     <div class="card-body">
 <div>
-    <app-attendance-header *ngIf="details?.teacherDetails" (Section)="displaySection($event)" (Class)="displayClass($event)" [details]="details"></app-attendance-header>
-    <app-attendance-header *ngIf="details?.studentDetails" [details]="details"></app-attendance-header>
+    <app-attendance-header *ngIf="details?.department" (Section)="displaySection($event)" (Class)="displayClass($event)" [details]="details"></app-attendance-header>
+    <app-attendance-header *ngIf="details?.parentId" [details]="details"></app-attendance-header> 
     <app-navigate-attendance *ngIf="displayAttendence" [attendance]="attendance" (startDateEmit)="getStartDateEmit($event)" (endDateEmit)="getEndDateEmit($event)" (dateRangeEmitter)="getDataWithDateRange($event)"></app-navigate-attendance>
-    <app-attendance-content *ngIf="displayAttendence" [attendanceData]="attendanceThisWeek"></app-attendance-content>
+    <!-- <app-search (filteredSearchEmitter)="searchBy($event)"></app-search>-->
+    <app-attendance-content *ngIf="displayAttendence" [filter] = "filter" [role]="role" [attendanceData]="attendanceThisWeek"></app-attendance-content> 
+    <app-attendance-header></app-attendance-header>
 </div>
 </div>
 </div>

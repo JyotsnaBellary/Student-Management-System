@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { LibraryService } from 'src/app/core/service/library/library.service';
+// import { LibraryService } from 'src/app/core/service/library/library.service';
 import { BorrowCart, IBorrowCart, preBook } from 'src/app/shared/entities/Library.entity';
 import { Iprebook } from '../books/books.component';
+import { LibraryService } from 'src/app/core/service/crud/library/library.service';
 
 @Component({
   selector: 'app-pre-book-list',
