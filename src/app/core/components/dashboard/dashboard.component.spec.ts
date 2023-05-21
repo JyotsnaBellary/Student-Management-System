@@ -5,7 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { DetailsComponent } from 'src/app/shared/components/details/details.component';
 import { LeaveTableComponent } from 'src/app/shared/components/leave-table/leave-table.component';
 import { HolidayTableComponent } from '../holiday-table/holiday-table.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard.component';
 
 describe('DashboardComponent', () => {
@@ -16,7 +16,7 @@ describe('DashboardComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ DashboardComponent, DetailsComponent, HolidayTableComponent, LeaveTableComponent ],
       imports:[ RouterTestingModule, RouterTestingModule.withRoutes([]),
-               RouterModule, FormsModule,
+               RouterModule, FormsModule, HttpClientModule,
               ],
     })
     .compileComponents();

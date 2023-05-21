@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { LibraryProfileComponent } from './library-profile.component';
 
 describe('LibraryProfileComponent', () => {
@@ -10,7 +10,7 @@ describe('LibraryProfileComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ LibraryProfileComponent ],
-      imports:[RouterTestingModule.withRoutes([])],
+      imports:[RouterTestingModule.withRoutes([]), HttpClientModule],
     })
     .compileComponents();
   });

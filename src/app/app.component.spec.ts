@@ -3,12 +3,14 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './core/components/sidenav/sidenav.component';
 import { TopnavComponent } from './core/components/topnav/topnav.component';
+import { HttpClientModule } from '@angular/common/http';
+
 describe('AppComponent', () => {
   beforeAll(()=> {});
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule, HttpClientModule
       ],
       declarations: [
         AppComponent, TopnavComponent

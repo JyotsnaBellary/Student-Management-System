@@ -31,6 +31,7 @@ import { LibraryOverviewComponent } from './shared/components/library/library-ov
 import { PreBookListComponent } from './shared/components/library/pre-book-list/pre-book-list.component';
 import { SearchComponent } from './core/components/search/search.component';
 import { AuthInterceptor } from './core/service/crud/auth/auth-interceptor';
+import { HolidaysModalComponentComponent } from './pages/components/holidays/holidays-modal-component/holidays-modal-component.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { AuthInterceptor } from './core/service/crud/auth/auth-interceptor';
     LibraryOverviewComponent,
     PreBookListComponent,
     SearchComponent,
+    HolidaysModalComponentComponent,
   ],
   imports: [
     BrowserModule,

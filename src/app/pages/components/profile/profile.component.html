@@ -18,12 +18,12 @@
                     <div *ngIf="details?.parentId" class="col-md-6"><label class="labels">Parent Id</label><input type="text" class="form-control" value="{{details?.parentId}}" placeholder="surname" disabled></div>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Class</label><input type="text" class="form-control" placeholder="Class" value="{{details?.Class}}" disabled></div>
-                    <div class="col-md-6"><label class="labels">Section</label><input type="text" class="form-control" value="{{ details?.section }}" placeholder="Section" disabled></div>
+                    <div class="col-md-6" *ngIf="details?.Class"><label class="labels">Class</label><input type="text" class="form-control" placeholder="Class" value="{{details?.Class}}" disabled></div>
+                    <div class="col-md-6" *ngIf="details?.section"><label class="labels">Section</label><input type="text" class="form-control" value="{{ details?.section }}" placeholder="Section" disabled></div>
                 </div> 
-                <div  *ngIf="role === 'teacher'" class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Department</label><input type="text" class="form-control" placeholder="department" value="{{details?.department}}" disabled></div>
-                    <div class="col-md-6"><label class="labels">specialization</label><input type="text" class="form-control" value="{{ details?.specialization}}" placeholder="specialization" disabled></div>
+                <div  *ngIf="role === 'teacher' || role === 'admin'" class="row mt-2">
+                    <div class="col-md-6"><label class="labels" *ngIf="details?.department">Department</label><input type="text" class="form-control" placeholder="department" value="{{details?.department}}" disabled></div>
+                    <div class="col-md-6"><label class="labels" *ngIf="details?.specialization">specialization</label><input type="text" class="form-control" value="{{ details?.specialization}}" placeholder="specialization" disabled></div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12"><label class="labels">Email Id</label><input type="text" class="form-control" placeholder="emailId" value="{{details?.email}}" disabled></div>

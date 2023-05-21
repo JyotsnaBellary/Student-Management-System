@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AuthService } from 'src/app/core/service/auth/auth.service';
-
+import { HttpClientModule } from '@angular/common/http';
 import { SignInComponent } from './sign-in.component';
+import { FormsModule } from '@angular/forms';
 
 describe('SignInComponent', () => {
   let component: SignInComponent;
@@ -11,7 +12,7 @@ describe('SignInComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ SignInComponent ],
-      imports:[RouterTestingModule.withRoutes([])],
+      imports:[RouterTestingModule.withRoutes([]), HttpClientModule, FormsModule],
       providers:[{provide:AuthService}]
     })
     .compileComponents();

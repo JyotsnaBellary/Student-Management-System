@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { BorrowCartComponent } from './borrow-cart.component';
 
 describe('BorrowCartComponent', () => {
@@ -10,7 +10,7 @@ describe('BorrowCartComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ BorrowCartComponent ],
-      imports:[RouterTestingModule.withRoutes([])],
+      imports:[RouterTestingModule.withRoutes([]), HttpClientModule],
     })
     .compileComponents();
   });

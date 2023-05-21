@@ -80,7 +80,7 @@ import { LibraryService } from '../library/library.service';
           {
             localStorage.setItem("userEmail", this.storedUsers[i].email);
             // this.storedEntitiess = entities;
-            this.Holidays = holidays;
+            // this.Holidays = holidays;
             localStorage.setItem("HolidayList", JSON.stringify(this.Holidays));
             // this.library = library;
             //if the user accessing is a teacher, load invigilations, Weekly Schedules, userDetails

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { NavigateAttendanceComponent } from './navigate-attendance.component';
 
 describe('NavigateAttendanceComponent', () => {
@@ -8,6 +8,7 @@ describe('NavigateAttendanceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [ NavigateAttendanceComponent ]
     })
     .compileComponents();

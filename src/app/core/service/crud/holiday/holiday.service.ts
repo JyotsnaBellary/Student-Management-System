@@ -28,4 +28,15 @@ export class HolidayService {
         })
         );
   }
+
+  getHolidayDetailsForEdit(id: string): Observable<any> {
+    let API_URL = `${this.REST_API}/holidays/${id}`;
+    return this.http
+      .get(API_URL)
+      .pipe(
+        map((res: any) => {
+          return res || {};
+        })
+        );
+  }
 }

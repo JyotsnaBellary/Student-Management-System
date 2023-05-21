@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { PreBookListComponent } from './pre-book-list.component';
+import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PreBookListComponent', () => {
   let component: PreBookListComponent;
@@ -8,6 +10,7 @@ describe('PreBookListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientModule, RouterModule , RouterTestingModule.withRoutes([])],
       declarations: [ PreBookListComponent ]
     })
     .compileComponents();

@@ -21,3 +21,11 @@ table {
     border: 1px solid #ddd;
 
   }
+
+  button{
+    /* float: right;  */
+    background-color: inherit; 
+    border: none; 
+    height: fit-content; 
+    /* width: fit-content; */
+  }

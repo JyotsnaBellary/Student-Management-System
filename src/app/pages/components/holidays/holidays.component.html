@@ -5,6 +5,7 @@
           <th>Date</th>
           <th>Holiday</th>
           <th>Day</th>
+          <th *ngIf="role === 'admin'">Action</th>
         </tr>
       </thead>
       <tbody *ngFor="let holiday of holidays">
@@ -12,6 +13,10 @@
           <td>{{ holiday.date | date: 'shortDate' }}</td>
           <td>{{ holiday.holiday }}</td>
           <td>{{ holiday.day }}</td>
+          <td *ngIf="role === 'admin'">
+            <button title="edit" (click)="editHoliday(holiday.id)"><i  class="fas fa-edit"></i></button>
+            <button title="edit" onclick="AboutFormFunc('EditInfo')"><i  class="fas fa-trash"></i></button>
+          </td>
         </tr>
       </tbody>
     </table>

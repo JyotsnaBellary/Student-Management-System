@@ -2,13 +2,14 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AuthService } from './auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AuthService', () => {
   let service: AuthService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[RouterTestingModule.withRoutes([])],
+      imports:[RouterTestingModule.withRoutes([]), HttpClientModule],
     })
     .compileComponents(); 
   

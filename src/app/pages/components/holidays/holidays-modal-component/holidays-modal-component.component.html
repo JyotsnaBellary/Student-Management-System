@@ -1,0 +1,57 @@
+<p>holidays-modal-component works!</p>
+<!-- Car Info Modal Dialog Begin-->
+<div role="dialog" aria-labelledby="carInfoDialogLabel" aria-hidden="true" style="min-height: 345px;">
+    <div class="modal-dialog modal-success" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <!-- Loading Spinner Begin-->
+        <!-- <div *ngIf="searchingForCar" style="text-align: center;font-size:20px" class="row">
+            <i class="fa fa-refresh fa-spin"></i>
+        </div> -->
+        <!-- Loading Spinner End-->
+        <!-- <div class="modal-body form-horizontal" *ngIf="!searchingForCar">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">License Plate</label>
+                <div class="col-sm-8">
+                    <input id="carLicensePlate" [(ngModel)]="car.licensePlate" class="form-control input" [maxlength]="15"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Car Type</label>
+                <div class="col-sm-5">
+                  <select class="form-control input" [(ngModel)]="car.carType.id">
+                    <option [hidden]="true" [ngValue]="undefined" selected>Choose...</option>
+                    <option *ngFor="let carType of carTypes" [ngValue]="carType.id">
+                     {{carType.vendor}} {{carType.model}}
+                    </option>
+                  </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Reference Id</label>
+                <div class="col-sm-8">
+                    <input id="carReferenceId" [(ngModel)]="car.referenceId" class="form-control input"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Camera Parameter Path</label>
+                <div class="col-sm-8">
+                    <input id="carCameraPath" [(ngModel)]="car.defaultParameterFolderPath" class="form-control input"/>
+                </div>
+            </div>
+        </div> -->
+        <div class="modal-footer">
+          <!-- <button type="button" id="closeDialog" class="btn btn-secondary" (click)="closeDialog()" title="Cancel changes"> -->
+            Cancel
+          <!-- </button> -->
+          <!-- <button [disabled]="!car?.carType?.id || !car?.licensePlate" type="button" id="saveChanges" class="btn btn-default" (click)="saveChangesAndCloseDialog()" title="Save changes"> -->
+            <i class="fa fa-save"></i>
+            Save
+          <!-- </button>   -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Car Info Modal Dialog End-->

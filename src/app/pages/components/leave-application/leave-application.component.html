@@ -12,6 +12,7 @@
             <input type="date" 
             class="form-control" 
             id="fromDate" 
+            value=" "
             formControlName = "fromDate" 
             required>
           </div>
@@ -23,6 +24,7 @@
           <div class="col-md-3"  *ngIf="moreDays">
             <label class="labels">End Date</label>
             <input type="date" 
+            value=" "
             class="form-control" 
             id="toDate"
             formControlName = "toDate" 
@@ -37,7 +39,8 @@
         <div class="col-md-6">
           <label class="labels">Leave Reason</label>
           <input type="text" 
-          class="form-control" 
+            value=" "
+            class="form-control" 
           id="reason" 
           formControlName = "reason" 
           required>

@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { BooksComponent } from './books.component';
 import { PreBookListComponent } from '../pre-book-list/pre-book-list.component';
 import { BorrowCartComponent } from '../borrow-cart/borrow-cart.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('BooksComponent', () => {
   let component: BooksComponent;
@@ -13,7 +14,7 @@ describe('BooksComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ BooksComponent, PreBookListComponent,  BorrowCartComponent],
       imports:[ RouterTestingModule, RouterTestingModule.withRoutes([]),
-               RouterModule,
+               RouterModule, HttpClientModule
               ],
     })
     .compileComponents();

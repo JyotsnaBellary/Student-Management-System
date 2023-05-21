@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { LibraryComponent } from './library.component';
 
 describe('LibraryComponent', () => {
@@ -12,7 +12,7 @@ describe('LibraryComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ LibraryComponent ],
       imports:[ RouterTestingModule, RouterTestingModule.withRoutes([]),
-               RouterModule,
+               RouterModule, HttpClientModule
               ],
     })
     .compileComponents();

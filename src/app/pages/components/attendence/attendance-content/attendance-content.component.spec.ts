@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AttendanceContentComponent } from './attendance-content.component';
 
@@ -10,7 +11,7 @@ describe('AttendanceContentComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ AttendanceContentComponent ],
-      imports:[RouterTestingModule.withRoutes([])],
+      imports:[RouterTestingModule.withRoutes([]), HttpClientModule],
     })
     .compileComponents();
   });
